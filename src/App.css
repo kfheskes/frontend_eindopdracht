@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
-}
+/*.wireframe {*/
+/*    background-color: #ffffff;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: center;*/
+/*    width: 100%;*/
+/*}*/
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/*.wireframe .div-2 {*/
+/*    background-color: #ffffff;*/
+/*    border: 1px none;*/
+/*    height: 1024px;*/
+/*    position: relative;*/
+/*    width: 1440px;*/
+/*}*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/*.wireframe .nav-nav-header {*/
+/*    align-items: center;*/
+/*    background-color: #ffffff;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    left: 0;*/
+/*    padding: 0 162px 0 212px;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    width: 1440px;*/
+/*}*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/*.wireframe .logo-BIERO {*/
+/*    background-color: #eff405;*/
+/*    border-radius: 4px;*/
+/*    height: 59px;*/
+/*    position: relative;*/
+/*}*/
 
-.App-link {
-  color: #61dafb;
-}
+/*.wireframe .tekst-biero {*/
+/*    color: #00000033;*/
+/*    font-family: "Plus Jakarta Sans-Bold", Helvetica, serif;*/
+/*    font-size: 16px;*/
+/*    font-weight: 700;*/
+/*    height: 49px;*/
+/*    left: 21px;*/
+/*    position: absolute;*/
+/*    text-align: center;*/
+/*    text-shadow: 0 4px 4px #00000040;*/
+/*    top: 4px;*/
+/*    width: 70px;*/
+/*}*/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*.wireframe .bier-optie {*/
+/*    height: 367px;*/
+/*    left: 209px;*/
+/*    position: absolute;*/
+/*    top: 567px;*/
+/*    width: 1069px;*/
+/*}*/
+
+/*.wireframe .rectangle {*/
+/*    height: 311px;*/
+/*    left: 33px;*/
+/*    position: absolute;*/
+/*    top: 28px;*/
+/*    width: 244px;*/
+/*}*/
+
+/*.wireframe .img {*/
+/*    height: 311px;*/
+/*    left: 797px;*/
+/*    position: absolute;*/
+/*    top: 30px;*/
+/*    width: 244px;*/
+/*}*/
+
+/*.wireframe .th {*/
+/*    height: 311px;*/
+/*    left: 415px;*/
+/*    position: absolute;*/
+/*    top: 30px;*/
+/*    width: 244px;*/
+/*}*/

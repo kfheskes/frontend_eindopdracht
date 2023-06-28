@@ -23,15 +23,6 @@ function App() {
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
 
-            <main>
-                <div>
-                    <h1>Biero</h1>
-                </div>
-            </main>
-
-            <footer>
-
-            </footer>
         </>
     );
 }

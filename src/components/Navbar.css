@@ -1,0 +1,63 @@
+.navbar {
+    display: flex;
+    width: 1440px;
+    padding: 0px 162px 0px 212px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+}
+
+.navbar .left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .button-beer {
+    display: flex;
+    width: 115px;
+    height: 59px;
+    padding: 5px 24px 5px 21px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: white;
+}
+
+.navbar .button-beer button {
+    background: #F0F405;
+    border: none;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+}
+
+.navbar .button-beer button:hover {
+    color: #666;
+}
+
+.navbar .right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+.navbar button:hover {
+    color: #ccc;
+}
+
+.navbar a,
+.navbar a:visited,
+.navbar a:active {
+    color: white;
+    text-decoration: none;
+}

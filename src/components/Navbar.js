@@ -6,6 +6,9 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
     return (
+        <header>
+            <div className="outer-container">
+                <div className="inner-container">
         <nav className="navbar">
             <div>
                 <NavLink to="/" className="button-beer">
@@ -18,6 +21,9 @@ function Navbar() {
                 <NavLink to="/signUp"><button type="button">Registeren</button></NavLink>
             </div>
         </nav>
+                </div>
+            </div>
+        </header>
     );
 }
 

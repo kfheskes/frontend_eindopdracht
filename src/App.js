@@ -9,7 +9,6 @@ import SignUp from "./pages/signUp/SignUp";
 import SearchResult from "./pages/searchResult/SearchResult";
 import NotFound from "./pages/notFound/NotFound";
 
-
 function App() {
     return (
         <>

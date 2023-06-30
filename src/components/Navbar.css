@@ -1,16 +1,15 @@
 .navbar {
     display: flex;
-    width: 100%;
-    padding: 20px 212px 0 212px;
+    padding-top: 20px;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     color: black;
+    flex-wrap: wrap;
 }
 
 .navbar .button-beer {
     text-decoration: none;
-    font-weight: bold;
 }
 
 .navbar .button-beer button {
@@ -20,7 +19,6 @@
     padding: 5px 24px 5px 21px;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
     background: #F0F405;
     border-radius: 4px;
     font-weight: bold;
@@ -33,15 +31,14 @@
 .navbar .menu {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .navbar .menu button {
-    margin-left: 40px;
+    margin-left: 16px;
 }
 
-
 .navbar button {
-    background: none;
     border: none;
     font-size: 16px;
     color: black;

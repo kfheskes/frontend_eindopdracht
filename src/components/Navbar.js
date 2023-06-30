@@ -12,9 +12,9 @@ function Navbar() {
                     <button type="button">Biero</button>
                 </NavLink>
             </div>
-            <div className="right">
-                <NavLink to="/favorite"><button type="button">Favorieten <img src={hartje} alt='favorite'/> </button></NavLink>
-                <NavLink to="/signIn"><button type="button">Inloggen <img src={inloggen} alt='inloggen'/> </button></NavLink>
+            <div className="menu">
+                <NavLink to="/favorite"><button type="button">Favorieten  </button></NavLink><img src={hartje} alt='favorite'/>
+                <NavLink to="/signIn"><button type="button">Inloggen </button></NavLink><img src={inloggen} alt='inloggen'/>
                 <NavLink to="/signUp"><button type="button">Registeren</button></NavLink>
             </div>
         </nav>

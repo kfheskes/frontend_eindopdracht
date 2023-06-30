@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     width: 100%;
-    padding: 20px 162px 0 212px;
+    padding: 20px 212px 0 212px;
     justify-content: space-between;
     align-items: center;
     background-color: white;
@@ -10,6 +10,7 @@
 
 .navbar .button-beer {
     text-decoration: none;
+    font-weight: bold;
 }
 
 .navbar .button-beer button {
@@ -29,10 +30,15 @@
     color: #666;
 }
 
-.navbar .right {
+.navbar .menu {
     display: flex;
     align-items: center;
 }
+
+.navbar .menu button {
+    margin-left: 40px;
+}
+
 
 .navbar button {
     background: none;
@@ -48,5 +54,3 @@
 .navbar button:hover {
     color: #ccc;
 }
-
-

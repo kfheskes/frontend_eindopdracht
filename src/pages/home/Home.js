@@ -1,54 +1,63 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react";
 import SearchBeer from "../../components/SearchBeer";
 import axios from "axios";
 
-
-function Home () {
+function Home() {
     const [beerData, setBeerData] = useState([]);
     const [description, setDescription] = useState('');
-    const [error, toggleError] = useState(false)
+    const [error, setError] = useState(false);
 
-    useEffect(()=> {
-    async function fetchDataBeer() {
-        toggleError(false)
-        try {
-            const result = await axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=80`);
-            console.log(result.data)
-            setBeerData(result.data);
-        } catch (e) {
-            console.error(e);
-            toggleError(true);
-        }
-    }
-    if (description) {
-        fetchDataBeer();
-    }
-}, [description])
+    useEffect(() => {
+        const controller = new AbortController();
 
-return (
-    <main className="outer-container">
-        <div className="inner-container">
-        <SearchBeer setDescriptionHandler={setDescription}/>
-            {error && <span> Oeps! deze locatie bestaat niet</span>}
-            <span>
-                {Object.keys(beerData).length > 0 &&
-                    <>
-                <h2>{beerData[0].name}</h2>
-                        <p>{beerData[0].description}</p>
-                        <img src={beerData[0].image_url} alt={beerData[0].name} />
-                        <h3>Food Pairing:</h3>
-                        <ul>
-                            {beerData[0].food_pairing.map((pairing, index) => (
-                                <li key={index}>{pairing}</li>
-                            ))}
-                        </ul>
-                    </>
+        async function fetchDataBeer() {
+            setError(false);
+            try {
+                const result = await axios.get(`https://api.punkapi.com/v2/beers?beer_name=${description}`);
+                console.log(result.data)
+                setBeerData(result.data);
+                if (result.data.length === 0) {
+                    setError(true);
                 }
-            </span>
-        </div>
-    </main>
+            } catch (e) {
+                console.error(e);
+                setError(true);
+            }
+        }
 
-)
+        if (description) {
+            fetchDataBeer();
+        }
+
+        return function cleanup() {
+            controller.abort();
+        };
+    }, [description]);
+
+    return (
+        <main className="outer-container">
+            <div className="inner-container">
+                {error && <span className="wrong-beer-error">Oh! Unknown beer try again</span>}
+                <SearchBeer setBeerHandler={setDescription} />
+                <span>
+                    {beerData.length > 0 &&
+                        beerData.map((beer) => (
+                            <div key={beer.id}>
+                                <h2>{beer.name}</h2>
+                                <p>{beer.description}</p>
+                                <img src={beer.image_url} alt={beer.name} />
+                                <h3>Food Pairing:</h3>
+                                <ul>
+                                    {beer.food_pairing.map((pairing, index) => (
+                                        <li key={`${beer.id}-${index}`}>{pairing}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+        </span>
+            </div>
+        </main>
+    );
 }
 
-export default Home
+export default Home;

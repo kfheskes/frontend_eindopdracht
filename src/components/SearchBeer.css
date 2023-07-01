@@ -1,0 +1,50 @@
+
+.search-beer {
+    position: relative;
+    margin-top: 200px;
+}
+
+.search-beer .search-img {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #0000004c;
+    height: 63px;
+    position: absolute;
+    width: 228px;
+}
+
+.search-beer .vector {
+    height: 25px;
+    left: 13px;
+    position: absolute;
+    top: 15px;
+    width: 25px;
+}
+
+.search-beer .overlap-group {
+    background-color: #eff405;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    height: 44px;
+    left: 37px;
+    position: absolute;
+    top: 90px;
+    width: 143px;
+}
+
+.search-beer .button-beer-search {
+    color: #000000;
+    background-color: #eff405;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    left: 18px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    top: 5px;
+    white-space: nowrap;
+    border: none;
+}

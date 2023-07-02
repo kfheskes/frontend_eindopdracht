@@ -1,10 +1,63 @@
+import React, { useEffect, useState } from "react";
 
 
-function Favorite () {
+function Favorite({toggleFavorite}) {
+    const storedFavorites = JSON.parse(localStorage.getItem('favoriteBeers')) || [];
+    const [favoriteBeers, setFavoriteBeers] = useState(storedFavorites);
 
-    return
+    useEffect(() => {
+        localStorage.setItem('favoriteBeers', JSON.stringify(favoriteBeers));
+        console.log(favoriteBeers);
+    }, [favoriteBeers]);
 
+    function toggleFavoritePage(beer) {
+        const isFavorite = favoriteBeers.some(
+            (favoriteBeer) => favoriteBeer.id === beer.id
+        );
 
+        if (isFavorite) {
+            const updatedFavorites = favoriteBeers.filter(
+                (favoriteBeer) => favoriteBeer.id !== beer.id
+            );
+            setFavoriteBeers(updatedFavorites);
+        } else {
+            setFavoriteBeers([...favoriteBeers, beer]);
+        }
+    }
+
+    function onFavorite(e) {
+        e.preventDefault();
+        toggleFavorite();
+    }
+
+    return (
+        <main className="outer-container">
+            <div className="inner-container">
+                <div onClick={onFavorite}>
+                <h1>Favorite Beers</h1>
+                {favoriteBeers.length === 0 && <p>No favorite beers yet.</p>}
+                {favoriteBeers.map((beer) => (
+                    <div key={beer.id}>
+                        <h2>{beer.name}</h2>
+                        <p>{beer.description}</p>
+                        <img src={beer.image_url} alt={beer.name} />
+                        <h3>Food Pairing:</h3>
+                        <ul>
+                            {beer.food_pairing.map((pairing) => (
+                                <li key={pairing}>{pairing}</li>
+                            ))}
+                        </ul>
+                        <button onClick={() => toggleFavoritePage(beer)}>
+                            {favoriteBeers.some((favoriteBeer) => favoriteBeer.id === beer.id)
+                                ? "Remove from Favorites"
+                                : "Add to Favorites"}
+                        </button>
+                    </div>
+                ))}
+                </div>
+            </div>
+        </main>
+    );
 }
 
-export default Favorite
+export default Favorite;

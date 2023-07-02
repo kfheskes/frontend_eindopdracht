@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SearchBeer from "../../components/SearchBeer";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'
+
 
 function Home() {
-    const navigate = useNavigate();
     const [beerData, setBeerData] = useState([]);
     const [description, setDescription] = useState('');
     const [error, setError] = useState(false);
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -34,7 +34,13 @@ function Home() {
         return function cleanup() {
             controller.abort();
         };
-    }, [description, navigate]);
+    }, [description]);
+
+    function addToFavorites(beer) {
+
+
+        console.log("Added to favorites:", beer);
+    }
 
     return (
         <main className="outer-container">
@@ -51,9 +57,10 @@ function Home() {
                                 <h3>Food Pairing:</h3>
                                 <ul>
                                     {beer.food_pairing.map((pairing) => (
-                                        <li>{pairing}</li>
+                                        <li key={pairing}>{pairing}</li>
                                     ))}
                                 </ul>
+                                <button onClick={() => addToFavorites(beer)}>Add to Favorites</button>
                             </div>
                         ))}
                 </span>

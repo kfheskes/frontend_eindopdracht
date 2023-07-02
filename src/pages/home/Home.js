@@ -36,10 +36,10 @@ function Home() {
         };
     }, [description]);
 
+
     function addToFavorites(beer) {
 
-
-        console.log("Added to favorites:", beer);
+        console.log('Added to favorites:', beer);
     }
 
     return (

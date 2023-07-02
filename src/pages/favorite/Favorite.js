@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
 
 
-function Favorite({toggleFavorite}) {
-    const storedFavorites = JSON.parse(localStorage.getItem('favoriteBeers')) || [];
-    const [favoriteBeers, setFavoriteBeers] = useState(storedFavorites);
+function Favorite() {
+const [favoriteBeers, setFavoriteBeers] = useState([]);
 
     useEffect(() => {
         localStorage.setItem('favoriteBeers', JSON.stringify(favoriteBeers));
         console.log(favoriteBeers);
     }, [favoriteBeers]);
+
+useEffect(()=>{
+    const favoriteBeers = JSON.parse(localStorage.getItem('favoriteBeers'));
+    if (favoriteBeers){
+        setFavoriteBeers(favoriteBeers)
+    }
+}, [])
+
+
+
 
     function toggleFavoritePage(beer) {
         const isFavorite = favoriteBeers.some(
@@ -25,15 +34,10 @@ function Favorite({toggleFavorite}) {
         }
     }
 
-    function onFavorite(e) {
-        e.preventDefault();
-        toggleFavorite();
-    }
-
     return (
         <main className="outer-container">
             <div className="inner-container">
-                <div onClick={onFavorite}>
+                <div>
                 <h1>Favorite Beers</h1>
                 {favoriteBeers.length === 0 && <p>No favorite beers yet.</p>}
                 {favoriteBeers.map((beer) => (

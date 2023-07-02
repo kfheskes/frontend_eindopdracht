@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import SearchBeer from "../../components/SearchBeer";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+    const navigate = useNavigate();
     const [beerData, setBeerData] = useState([]);
     const [description, setDescription] = useState('');
     const [error, setError] = useState(false);
@@ -32,7 +34,7 @@ function Home() {
         return function cleanup() {
             controller.abort();
         };
-    }, [description]);
+    }, [description, navigate]);
 
     return (
         <main className="outer-container">
@@ -48,13 +50,13 @@ function Home() {
                                 <img src={beer.image_url} alt={beer.name} />
                                 <h3>Food Pairing:</h3>
                                 <ul>
-                                    {beer.food_pairing.map((pairing, index) => (
-                                        <li key={`${beer.id}-${index}`}>{pairing}</li>
+                                    {beer.food_pairing.map((pairing) => (
+                                        <li>{pairing}</li>
                                     ))}
                                 </ul>
                             </div>
                         ))}
-        </span>
+                </span>
             </div>
         </main>
     );

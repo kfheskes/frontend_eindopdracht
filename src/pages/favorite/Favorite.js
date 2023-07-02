@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
-function Favorite() {
+function Favorite( {setFavorite}) {
 const [favoriteBeers, setFavoriteBeers] = useState([]);
 
     useEffect(() => {
@@ -30,6 +30,7 @@ useEffect(()=>{
         } else {
             setFavoriteBeers([...favoriteBeers, beer]);
         }
+        setFavorite(beer);
     }
 
     return (

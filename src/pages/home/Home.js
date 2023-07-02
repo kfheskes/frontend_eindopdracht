@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SearchBeer from "../../components/SearchBeer";
 import axios from "axios";
-
+import Favorite from "../favorite/Favorite";
 
 function Home() {
     const [beerData, setBeerData] = useState([]);
-    const [description, setDescription] = useState('');
+    const [description, setDescription] = useState("");
     const [error, setError] = useState(false);
-
+    const [favorite, setFavorite] = useState(null);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -15,8 +15,10 @@ function Home() {
         async function fetchDataBeer() {
             setError(false);
             try {
-                const result = await axios.get(`https://api.punkapi.com/v2/beers?beer_name=${description}`);
-                console.log(result.data)
+                const result = await axios.get(
+                    `https://api.punkapi.com/v2/beers?beer_name=${description}`
+                );
+                console.log(result.data);
                 setBeerData(result.data);
                 if (result.data.length === 0) {
                     setError(true);
@@ -36,34 +38,38 @@ function Home() {
         };
     }, [description]);
 
-
     function addToFavorites(beer) {
-
-        console.log('Added to favorites:', beer);
+        console.log("Added to favorites:", beer);
+        setFavorite(beer);
     }
 
     return (
         <main className="outer-container">
             <div className="inner-container">
-                {error && <span className="wrong-beer-error">Oh! Unknown beer try again</span>}
+                {error && (
+                    <span className="wrong-beer-error">Oh! Unknown beer try again</span>
+                )}
                 <SearchBeer setBeerHandler={setDescription} />
+                <Favorite favorite={favorite} setFavorite={addToFavorites} />
                 <span>
-                    {beerData.length > 0 &&
-                        beerData.map((beer) => (
-                            <div key={beer.id}>
-                                <h2>{beer.name}</h2>
-                                <p>{beer.description}</p>
-                                <img src={beer.image_url} alt={beer.name} />
-                                <h3>Food Pairing:</h3>
-                                <ul>
-                                    {beer.food_pairing.map((pairing) => (
-                                        <li key={pairing}>{pairing}</li>
-                                    ))}
-                                </ul>
-                                <button onClick={() => addToFavorites(beer)}>Add to Favorites</button>
-                            </div>
-                        ))}
-                </span>
+          {beerData.length > 0 &&
+              beerData.map((beer) => (
+                  <div key={beer.id}>
+                      <h2>{beer.name}</h2>
+                      <p>{beer.description}</p>
+                      <img src={beer.image_url} alt={beer.name} />
+                      <h3>Food Pairing:</h3>
+                      <ul>
+                          {beer.food_pairing.map((pairing) => (
+                              <li key={pairing}>{pairing}</li>
+                          ))}
+                      </ul>
+                      <button onClick={() => addToFavorites(beer)}>
+                          Add to Favorites
+                      </button>
+                  </div>
+              ))}
+        </span>
             </div>
         </main>
     );

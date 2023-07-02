@@ -17,8 +17,6 @@ useEffect(()=>{
 }, [])
 
 
-
-
     function toggleFavoritePage(beer) {
         const isFavorite = favoriteBeers.some(
             (favoriteBeer) => favoriteBeer.id === beer.id

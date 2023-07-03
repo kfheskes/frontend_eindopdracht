@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import SearchBeer from "../../components/SearchBeer";
+import SearchBeer from "../../components/SearchBeer/SearchBeer";
 import axios from "axios";
 import Favorite from "../favorite/Favorite";
+import ButtonAddToFavorite from "../../components/buttonAddToFavorite/ButtonAddToFavorite";
 
 function Home() {
     const [beerData, setBeerData] = useState([]);
     const [description, setDescription] = useState("");
     const [error, setError] = useState(false);
-    const [favorite, setFavorite] = useState(null);
+    const [favorite, setFavorite] = useState([]);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -40,7 +41,7 @@ function Home() {
 
     function addToFavorites(beer) {
         console.log("Added to favorites:", beer);
-        setFavorite(beer);
+        setFavorite([...favorite, beer]);
     }
 
     return (
@@ -50,7 +51,7 @@ function Home() {
                     <span className="wrong-beer-error">Oh! Unknown beer try again</span>
                 )}
                 <SearchBeer setBeerHandler={setDescription} />
-                <Favorite favorite={favorite} setFavorite={addToFavorites} />
+                <Favorite favoriteBeers={favorite} />
                 <span>
           {beerData.length > 0 &&
               beerData.map((beer) => (
@@ -64,9 +65,7 @@ function Home() {
                               <li key={pairing}>{pairing}</li>
                           ))}
                       </ul>
-                      <button onClick={() => addToFavorites(beer)}>
-                          Add to Favorites
-                      </button>
+                      <ButtonAddToFavorite beer={beer} beerHandler={addToFavorites}/>
                   </div>
               ))}
         </span>

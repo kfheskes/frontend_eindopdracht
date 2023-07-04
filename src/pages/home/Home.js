@@ -8,7 +8,7 @@ function Home() {
     const [beerData, setBeerData] = useState([]);
     const [description, setDescription] = useState("");
     const [error, setError] = useState(false);
-    const [favorite, setFavorite] = useState([]);
+    const [favoriteBeers, setFavoriteBeers] = useState([]);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -41,7 +41,7 @@ function Home() {
 
     function addToFavorites(beer) {
         console.log("Added to favorites:", beer);
-        setFavorite([...favorite, beer]);
+        setFavoriteBeers([...favoriteBeers, beer]);
     }
 
     return (
@@ -51,24 +51,24 @@ function Home() {
                     <span className="wrong-beer-error">Oh! Unknown beer try again</span>
                 )}
                 <SearchBeer setBeerHandler={setDescription} />
-                <Favorite favoriteBeers={favorite} />
+                <Favorite favoriteBeers={favoriteBeers} />
                 <span>
-          {beerData.length > 0 &&
-              beerData.map((beer) => (
-                  <div key={beer.id}>
-                      <h2>{beer.name}</h2>
-                      <p>{beer.description}</p>
-                      <img src={beer.image_url} alt={beer.name} />
-                      <h3>Food Pairing:</h3>
-                      <ul>
-                          {beer.food_pairing.map((pairing) => (
-                              <li key={pairing}>{pairing}</li>
-                          ))}
-                      </ul>
-                      <ButtonAddToFavorite beer={beer} beerHandler={addToFavorites}/>
-                  </div>
-              ))}
-        </span>
+                    {beerData.length > 0 &&
+                        beerData.map((beer) => (
+                            <div key={beer.id}>
+                                <h2>{beer.name}</h2>
+                                <p>{beer.description}</p>
+                                <img src={beer.image_url} alt={beer.name} />
+                                <h3>Food Pairing:</h3>
+                                <ul>
+                                    {beer.food_pairing.map((pairing) => (
+                                        <li key={pairing}>{pairing}</li>
+                                    ))}
+                                </ul>
+                                <ButtonAddToFavorite beer={beer} beerHandler={addToFavorites} />
+                            </div>
+                        ))}
+                </span>
             </div>
         </main>
     );

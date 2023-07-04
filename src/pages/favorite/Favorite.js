@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-function Favorite({ setFavorite }) {
-    const [favoriteBeers, setFavoriteBeers] = useState([]);
+function Favorite({ favoriteBeers: initialFavoriteBeers }) {
+    const [favoriteBeers, setFavoriteBeers] = useState(initialFavoriteBeers);
 
     useEffect(() => {
         localStorage.setItem("favoriteBeers", JSON.stringify(favoriteBeers));

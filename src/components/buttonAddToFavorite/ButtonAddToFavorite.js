@@ -1,14 +1,14 @@
+// ButtonAddToFavorite.js
 import React from "react";
 
 function ButtonAddToFavorite({ beer, beerHandler }) {
-    const handleClick = () => {
+    function handleClick(e) {
+        e.preventDefault();
         beerHandler(beer);
     };
 
     return (
-        <button onClick={handleClick}>
-            {beer.beerHandler ? "Remove from Favorites" : "Add to Favorites"}
-        </button>
+        <button onClick={handleClick}>Add to Favorites</button>
     );
 }
 

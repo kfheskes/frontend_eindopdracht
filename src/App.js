@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react";
 import {Routes, Route} from 'react-router-dom'
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Favorite from "./pages/favorite/Favorite";
 import Home from "./pages/home/Home";
 import SignIn from "./pages/signIn/SignIn";
@@ -18,7 +18,7 @@ function App() {
                 <Route path="/signIn" element={<SignIn/>}/>
                 <Route path="/signUp" element={<SignUp/>}/>
                 <Route path="/favorite" element={<Favorite/>}/>
-                <Route path="/searchResult" element={<SearchResult/>}/>
+                {/*<Route path="/searchResult" element={<SearchResult/>}/>*/}
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </>

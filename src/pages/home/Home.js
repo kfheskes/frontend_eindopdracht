@@ -51,7 +51,7 @@ function Home() {
                     <span className="wrong-beer-error">Oh! Unknown beer try again</span>
                 )}
                 <SearchBeer setBeerHandler={setDescription} />
-                <Favorite favoriteBeers={favoriteBeers} />
+                <Favorite addFavoriteBeers={favoriteBeers} />
                 <span>
                     {beerData.length > 0 &&
                         beerData.map((beer) => (

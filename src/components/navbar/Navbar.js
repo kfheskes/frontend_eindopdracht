@@ -5,20 +5,27 @@ import inloggen from '../../assets/inloggen logo.png'
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
+
+        const navObject = {
+        isActive: true,
+        isPending: false,
+    }
+
+
     return (
         <header>
             <div className="outer-container">
                 <div className="inner-container">
         <nav className="navbar">
             <div>
-                <NavLink to="/" className="button-beer">
+                <NavLink className={( navObject) => navObject.isActive ? 'active-button-beer' : 'default-button-beer'} to="/">
                     <button type="button">Biero</button>
                 </NavLink>
             </div>
             <div className="menu">
-                <NavLink to="/favorite"><button type="button">Favorieten  </button></NavLink><img src={hartje} alt='favorite'/>
-                <NavLink to="/signIn"><button type="button">Inloggen </button></NavLink><img src={inloggen} alt='inloggen'/>
-                <NavLink to="/signUp"><button type="button">Registeren</button></NavLink>
+                <NavLink className={(navObject ) => navObject.isActive ? 'active-button' : 'default-button'} to="/favorite"><button type="button">Favorieten  </button></NavLink><img src={hartje} alt='favorite'/>
+                <NavLink className={(navObject ) => navObject.isActive ? 'active-button' : 'default-button'} to="/signIn"><button type="button">Inloggen </button></NavLink><img src={inloggen} alt='inloggen'/>
+                <NavLink className={(navObject ) => navObject.isActive ? 'active-button' : 'default-button'} to="/signUp"><button type="button">Registeren</button></NavLink>
             </div>
         </nav>
                 </div>

@@ -8,11 +8,8 @@
     flex-wrap: wrap;
 }
 
-.navbar .button-beer {
-    text-decoration: none;
-}
-
-.navbar .button-beer button {
+.navbar .active-button-beer {
+    text-decoration: underline;
     display: flex;
     width: 115px;
     height: 59px;
@@ -22,10 +19,41 @@
     background: #F0F405;
     border-radius: 4px;
     font-weight: bold;
+    cursor: pointer;
+    margin-left: 16px;
+    font-size: 16px;
 }
 
-.navbar .button-beer button:hover {
-    color: #666;
+.navbar .default-button-beer {
+    display: flex;
+    width: 115px;
+    height: 59px;
+    padding: 5px 24px 5px 21px;
+    justify-content: center;
+    align-items: center;
+    background: #F0F405;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .default-button-beer button{
+    background: #F0F405;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar .active-button-beer button{
+    background: #F0F405;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 .navbar .menu {
@@ -34,20 +62,34 @@
     margin-left: auto;
 }
 
-.navbar .menu button {
-    margin-left: 16px;
-}
 
-.navbar button {
+.navbar .menu .active-button button {
+    text-decoration: underline;
     border: none;
     font-size: 16px;
     color: black;
+    background: white;
     cursor: pointer;
     margin-left: 16px;
+    font-weight: bold;
+}
+
+.navbar .menu .default-button button {
     text-decoration: none;
+    border: none;
+    font-size: 16px;
+    color: black;
+    background: white;
+    cursor: pointer;
+    margin-left: 16px;
     font-weight: bold;
 }
 
 .navbar button:hover {
     color: #ccc;
 }
+
+.navbar .menu button:hover {
+    color: #ccc;
+}
+

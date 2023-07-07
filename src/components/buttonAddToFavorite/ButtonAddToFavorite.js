@@ -4,6 +4,7 @@ import React from "react";
 function ButtonAddToFavorite({ beer, beerHandler }) {
     function handleClick(e) {
         e.preventDefault();
+        console.log(beer)
         beerHandler(beer);
     };
 

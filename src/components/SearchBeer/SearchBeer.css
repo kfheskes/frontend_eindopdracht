@@ -3,8 +3,16 @@
     position: relative;
     margin-top: 200px;
 }
-
-.search-beer .search-img {
+.search-beer .input-search-beer{
+    background-color: #ffffff;
+    height: 52px;
+    top: 2px;
+    left: 37px;
+    position: relative;
+    width: 170px;
+    border: none;
+}
+.search-beer .search-bar {
     background-color: #ffffff;
     border: 3px solid #000000;
     border-radius: 30px;
@@ -48,3 +56,5 @@
     white-space: nowrap;
     border: none;
 }
+
+

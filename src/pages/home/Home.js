@@ -38,8 +38,9 @@ function Home() {
     }, [description]);
 
     function addToFavorites(beer) {
-        console.log("Added to favorites:", beer);
-        localStorage.setItem('favoriteBeer', JSON.stringify([beer.name]))
+        console.log('Added to favorites:', beer);
+        localStorage.setItem(
+            'favoriteBeer', beer.name)
     }
 
     return (

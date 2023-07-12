@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function Favorite() {
+function Favorite(key) {
     const [error, setError] = useState (false);
     const [favoriteBeers, setFavoriteBeers] = useState([]);
     const [beerDescription, setBeerDescription] = useState("")
@@ -37,7 +37,7 @@ function Favorite() {
 
 
     useEffect(() => {
-        setBeerDescription (JSON.parse(localStorage.getItem('favoriteBeer')))
+        setBeerDescription (localStorage.getItem('favoriteBeer' ))
     }, []);
 
 

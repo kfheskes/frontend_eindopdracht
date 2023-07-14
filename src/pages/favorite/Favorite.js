@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function Favorite(key) {
+function Favorite() {
     const [error, setError] = useState (false);
     const [favoriteBeers, setFavoriteBeers] = useState([]);
     const [beerDescription, setBeerDescription] = useState("")

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import SearchBeer from "../../components/SearchBeer/SearchBeer";
 import axios from "axios";
 import ButtonAddToFavorite from "../../components/buttonAddToFavorite/ButtonAddToFavorite";
+import SearchDish from "../../components/searchDish/SearchDish"
 
 function Home() {
     const [beerData, setBeerData] = useState([]);
     const [description, setDescription] = useState("");
     const [error, setError] = useState(false);
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -40,8 +42,9 @@ function Home() {
     function addToFavorites(beer) {
         console.log('Added to favorites:', beer);
         localStorage.setItem(
-            'favoriteBeer', beer.name)
+            'favoriteBeer', beer)
     }
+
 
     return (
         <main className="outer-container">
@@ -50,6 +53,7 @@ function Home() {
                     <span className="wrong-beer-error">Oh! Unknown beer try again</span>
                 )}
                 <SearchBeer setBeerHandler={setDescription} />
+                <SearchDish />
                 <span>
                     {beerData.length > 0 &&
                         beerData.map((beer) => (

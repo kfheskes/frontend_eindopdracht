@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import "./SearchDish.css";
 import vector from "../../assets/Vector.svg";
-import {useNavigate} from "react-router-dom";
 
-function SearchDish() {
-    // const [beerQuery, setBeerQuery] = useState('');
-    // const navigate = useNavigate();
-    // function onFormSubmit(e) {
-    //     e.preventDefault();
-    //     setBeerHandler(beerQuery);
-    //     navigate("/searchResult")
-    // }
+
+function SearchDish({setDishHandler}) {
+    const [dishQuery, setDishQuery] = useState('');
+    function onFormSubmit(e) {
+        e.preventDefault();
+        setDishHandler(dishQuery);
+    }
 
     return (
-        <form className="search-dish">
+        <form className="search-dish" onSubmit={onFormSubmit}>
             <div className="search-bar">
                 <input className="input-search-dish"
                        type="text"
                        name="search-dish"
+                       value={dishQuery}
+                       onChange={(e) => setDishQuery(e.target.value)}
                 />
                 <img className="vector" alt="Vector" src={vector} />
             </div>

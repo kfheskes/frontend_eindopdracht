@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./SearchBeer.css";
 import vector from "../../assets/Vector.svg";
@@ -25,11 +26,11 @@ function SearchBeer({ setBeerHandler }) {
             </div>
             <div className="overlap-group">
                 <button type="submit" className="button-beer-search">
-                    <Link to={`/searchResult/${beerQuery}`}>Search beer</Link>
+                   Search Beer
                 </button>
             </div>
         </form>
     );
 }
 
-export default SearchBeer;
+export default SearchBeer

@@ -6,21 +6,23 @@ import Favorite from "./pages/favorite/Favorite";
 import Home from "./pages/home/Home";
 import SignIn from "./pages/signIn/SignIn";
 import SignUp from "./pages/signUp/SignUp";
-import SearchResult from "./pages/searchResult/SearchResult";
 import NotFound from "./pages/notFound/NotFound";
+import {GlobalProvider} from "./context/GlobalState";
 
 function App() {
     return (
         <>
+            <GlobalProvider>
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/signIn" element={<SignIn/>}/>
                 <Route path="/signUp" element={<SignUp/>}/>
                 <Route path="/favorite" element={<Favorite/>}/>
-                <Route path="/searchResult/:id" element={<SearchResult/>}/>
+                {/*<Route path="/searchResult/id" element={<SearchResult/>}/>*/}
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
+            </GlobalProvider>
         </>
     );
 }

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./SearchBeer.css";
 import vector from "../../assets/Vector.svg";
-import { Link } from "react-router-dom";
+
 
 function SearchBeer({ setBeerHandler }) {
     const [beerQuery, setBeerQuery] = useState('');

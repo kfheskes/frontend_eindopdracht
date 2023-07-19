@@ -7,12 +7,12 @@ import Home from "./pages/home/Home";
 import SignIn from "./pages/signIn/SignIn";
 import SignUp from "./pages/signUp/SignUp";
 import NotFound from "./pages/notFound/NotFound";
-import {GlobalProvider} from "./context/GlobalState";
+import {GlobalState} from "./context/GlobalState";
 
 function App() {
     return (
         <>
-            <GlobalProvider>
+            <GlobalState>
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
@@ -22,7 +22,7 @@ function App() {
                 {/*<Route path="/searchResult/id" element={<SearchResult/>}/>*/}
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
-            </GlobalProvider>
+            </GlobalState>
         </>
     );
 }

@@ -1,24 +1,28 @@
-function AppReducer (state, action) {
+// AppReducer.js
+function AppReducer(state, action) {
     switch (action.type) {
         case "ADD_COMBINATION":
             return {
-            ...state,
+                ...state,
                 favorites: [action.payload, ...state.favorites],
-            }
+            };
         case "REMOVE_FROM_FAVORITES":
             return {
                 ...state,
-                favorites: state.favorites.filter(beer => beer.id !== action.payload)
-            }
+                favorites: state.favorites.filter((beer) => beer.id !== action.payload),
+            };
         case "ADD_RATING":
+            const { pairing, rating } = action.payload;
             return {
                 ...state,
-                rating: [action.payload, ...state.rating],
-            }
+                ratings: {
+                    ...state.ratings,
+                    [pairing]: rating,
+                },
+            };
         default:
             return state;
+    }
 }
-}
-export default AppReducer
 
-// kan misschien hier ook de andere states toevoegen! van AppReducer2
+export default AppReducer;

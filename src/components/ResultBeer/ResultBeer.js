@@ -5,7 +5,7 @@ import {GlobalContext} from "../../context/GlobalState";
 function ResultBeer  ({beer}) {
     const {addFavorites, favorites} = useContext(GlobalContext);
 
-    let storedFavorites = favorites.find(o => o.id === beer.id);
+    let storedFavorites = favorites.find(favo => favo.id === beer.id);
 
     const favoriteDisabled = !!storedFavorites;
 

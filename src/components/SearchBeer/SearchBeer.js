@@ -1,6 +1,8 @@
+
 import React, { useState } from "react";
 import "./SearchBeer.css";
 import vector from "../../assets/Vector.svg";
+
 
 function SearchBeer({ setBeerHandler }) {
     const [beerQuery, setBeerQuery] = useState('');
@@ -13,7 +15,8 @@ function SearchBeer({ setBeerHandler }) {
     return (
         <form className="search-beer" onSubmit={onFormSubmit}>
             <div className="search-bar">
-                <input className="input-search-beer"
+                <input
+                    className="input-search-beer"
                     type="text"
                     name="search-beer"
                     value={beerQuery}
@@ -23,11 +26,11 @@ function SearchBeer({ setBeerHandler }) {
             </div>
             <div className="overlap-group">
                 <button type="submit" className="button-beer-search">
-                    Search beer
+                   Search Beer
                 </button>
             </div>
         </form>
     );
 }
 
-export default SearchBeer;
+export default SearchBeer

@@ -1,10 +1,9 @@
-
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./SearchBeer.css";
 import vector from "../../assets/Vector.svg";
 
 
-function SearchBeer({ setBeerHandler }) {
+function SearchBeer({setBeerHandler}) {
     const [beerQuery, setBeerQuery] = useState('');
 
     function onFormSubmit(e) {
@@ -22,11 +21,11 @@ function SearchBeer({ setBeerHandler }) {
                     value={beerQuery}
                     onChange={(e) => setBeerQuery(e.target.value)}
                 />
-                <img className="vector" alt="Vector" src={vector} />
+                <img className="vector" alt="Vector" src={vector}/>
             </div>
             <div className="overlap-group">
                 <button type="submit" className="button-beer-search">
-                   Search Beer
+                    Search Beer
                 </button>
             </div>
         </form>

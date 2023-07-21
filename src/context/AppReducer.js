@@ -12,7 +12,7 @@ function AppReducer(state, action) {
                 favorites: state.favorites.filter((beer) => beer.id !== action.payload),
             };
         case "ADD_RATING":
-            const { pairing, rating } = action.payload;
+            const {pairing, rating} = action.payload;
             return {
                 ...state,
                 ratings: {

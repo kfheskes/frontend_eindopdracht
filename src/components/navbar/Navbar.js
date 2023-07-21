@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Navbar.css';
 import hartje from '../../assets/hartje.png'
 import inloggen from '../../assets/inloggen logo.png'
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import {AuthContext} from "../../context/AuthContext";
 
 function Navbar() {
+const {isAuth, login, logout} = useContext(AuthContext);
 
-        const navObject = {
+
+    const navObject = {
         isActive: true,
         isPending: false,
     }
@@ -16,18 +19,32 @@ function Navbar() {
         <header>
             <div className="outer-container">
                 <div className="inner-container">
-        <nav className="navbar">
-            <div>
-                <NavLink className={( navObject) => navObject.isActive ? 'active-button-beer' : 'default-button-beer'} to="/">
-                    <button type="button">Biero</button>
-                </NavLink>
-            </div>
-            <div className="menu">
-                <NavLink className={(navObject ) => navObject.isActive ? 'active-button' : 'default-button'} to="/favorite"><button type="button">Favorieten  </button></NavLink><img src={hartje} alt='favorite'/>
-                <NavLink className={(navObject ) => navObject.isActive ? 'active-button' : 'default-button'} to="/signIn"><button type="button">Inloggen </button></NavLink><img src={inloggen} alt='inloggen'/>
-                <NavLink className={(navObject ) => navObject.isActive ? 'active-button' : 'default-button'} to="/signUp"><button type="button">Registeren</button></NavLink>
-            </div>
-        </nav>
+                    <nav className="navbar">
+                        <div>
+                            <NavLink
+                                className={(navObject) => navObject.isActive ? 'active-button-beer' : 'default-button-beer'}
+                                to="/">
+                                <button type="button">Biero</button>
+                            </NavLink>
+                        </div>
+
+                        <div className="menu">
+                            <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
+                                     to="/favorite">
+                                <button type="button">Favorieten</button>
+                            </NavLink><img src={hartje} alt='favorite'/>
+
+                            <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
+                                     to="/signIn">
+                                <button type="button" onClick={ isAuth ? logout : login }>{isAuth ? "Logout" : "Login"}</button>
+                            </NavLink><img src={inloggen} alt='inloggen'/>
+                            
+                            <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
+                                     to="/signUp">
+                                <button type="button">Registeren</button>
+                            </NavLink>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </header>

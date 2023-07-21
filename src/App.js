@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, {useContext} from "react";
 import {Routes, Route} from 'react-router-dom'
 import Navbar from "./components/navbar/Navbar";
 import Favorite from "./pages/favorite/Favorite";
@@ -8,8 +8,12 @@ import SignIn from "./pages/signIn/SignIn";
 import SignUp from "./pages/signUp/SignUp";
 import NotFound from "./pages/notFound/NotFound";
 import {GlobalState} from "./context/GlobalState";
+import {AuthContext} from "./context/AuthContext";
 
 function App() {
+    const { isAuth} = useContext(AuthContext)
+    console.log(isAuth)
+
     return (
         <>
             <GlobalState>
@@ -18,7 +22,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/signIn" element={<SignIn/>}/>
                 <Route path="/signUp" element={<SignUp/>}/>
-                <Route path="/favorite" element={<Favorite/>}/>
+                <Route path="/favorite" element={isAuth ?<Favorite/> : <SignUp/>}/>
                 {/*<Route path="/searchResult/id" element={<SearchResult/>}/>*/}
                 <Route path="*" element={<NotFound/>}/>
             </Routes>

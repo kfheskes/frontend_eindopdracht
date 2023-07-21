@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import SearchBeer from "../../components/SearchBeer/SearchBeer";
 import axios from "axios";
 import SearchDish from "../../components/searchDish/SearchDish";
@@ -37,6 +37,7 @@ function Home() {
                 setError(true);
             }
         }
+
         if (descriptionBeer) {
             fetchDataBeer();
         }
@@ -45,8 +46,9 @@ function Home() {
         };
     }, [descriptionBeer]);
 
-        useEffect(()=> {
-            const controller = new AbortController();
+    useEffect(() => {
+        const controller = new AbortController();
+
         async function fetchDataDish() {
             setErrorDish(false);
             setDescriptionBeer("");
@@ -68,6 +70,7 @@ function Home() {
                 setErrorDish(true);
             }
         }
+
         if (descriptionDish) {
             fetchDataDish();
         }
@@ -85,8 +88,8 @@ function Home() {
                 )}{errorDish && (
                 <span className="wrong-beer-error">Oh! Unknown dish try again</span>
             )}
-                <SearchBeer setBeerHandler={setDescriptionBeer} />
-                <SearchDish setDishHandler={setDescriptionDish} />
+                <SearchBeer setBeerHandler={setDescriptionBeer}/>
+                <SearchDish setDishHandler={setDescriptionDish}/>
                 <span>
                     {beerData.length > 0 &&
                         beerData.map((beer) => (

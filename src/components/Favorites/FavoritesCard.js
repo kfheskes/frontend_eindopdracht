@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import "./FavoritesCards.css";
-import { RemoveFavorite } from "../RemoveFavorite/RemoveFavorite";
+import {RemoveFavorite} from "../RemoveFavorite/RemoveFavorite";
 import Beer_empty from "../../assets/Beer empty.png";
 import Bier_full from "../../assets/Bier full.png";
-import { GlobalContext } from "../../context/GlobalState";
+import {GlobalContext} from "../../context/GlobalState";
 
-function FavoritesCard({ beer, type }) {
-    const { ratings, addRating,  } = useContext(GlobalContext);
+function FavoritesCard({beer, type}) {
+    const {ratings, addRating,} = useContext(GlobalContext);
     const [foodRatings, setFoodRatings] = useState({});
 
     const handleToggleImage = (pairing, rating) => {
@@ -24,7 +24,7 @@ function FavoritesCard({ beer, type }) {
             <h2>{beer.name}</h2>
             <p>{beer.description}</p>
             {beer.image_url ? (
-                <img src={beer.image_url} alt={beer.name} />
+                <img src={beer.image_url} alt={beer.name}/>
             ) : (
                 <div className="no-img">No img available</div>
             )}
@@ -47,7 +47,7 @@ function FavoritesCard({ beer, type }) {
                     </li>
                 ))}
             </ul>
-            <RemoveFavorite type={type} beer={beer} />
+            <RemoveFavorite type={type} beer={beer}/>
         </div>
     );
 }

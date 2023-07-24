@@ -1,5 +1,5 @@
-// Stap 1: Maak een state object aan voor de authenticatie
-// Stap 2: Pas de verwijzingen naar de state aan (ook bij je logout functie)
+
+
 // Stap 5: Token ontvangen en decoderen
 // Stap 6: Token opslaan in de local storage en verwijderen bij logout
 // Stap 7: Gebruiker ophalen met de token
@@ -15,25 +15,53 @@
 // stap 17 geef een redirect mee (optioneel)
 
 import React, {createContext, useState} from 'react';
+import {useNavigate} from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 export const AuthContext = createContext(null)
 
 
 function AuthContextProvider({children}) {
-    const [isAuth, setIsAuth] = useState(false);
+    // Stap 1: Maak een state object aan voor de authenticatie
+    const [auth, setAuth] = useState({
+        isAuth: false,
+        user: null});
+    const navigate = useNavigate()
 
-    function login() {
-        setIsAuth(true)
+
+    // Stap 2: Pas de verwijzingen naar de state aan (ook bij je logout functie) door in function login en logout een object creeren
+    function login(jwt_token) {
+        const decodedToken = jwt_decode(jwt_token)
+        console.log(decodedToken)
+        console.log(jwt_token)
+        setAuth({
+            ...auth,
+            isAuth: true,
+            user: {
+                   email: 'jaja@hotmail.com',
+                    id: 1,
+            }
+        })
+        console.log('De gebruiker is ingelogd 🔓')
+        navigate('/')
     }
 
-    function logOut() {
-        setIsAuth(false)
+    function logout() {
+        setAuth({
+            ...auth,
+            isAuth: false,
+            user: null,
+        })
+        console.log('De gebruiker is uitgelogd 🔒')
+        navigate('/')
     }
+
 
     const data = {
-        isAuth: isAuth,
+        isAuth: auth.isAuth,
+        user: auth.user,
         login: login,
-        logout: logOut,
+        logout: logout,
     }
 
     return (

@@ -29,20 +29,25 @@ const {isAuth, login, logout} = useContext(AuthContext);
                         </div>
 
                         <div className="menu">
+                            {isAuth &&
                             <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
-                                     to="/favorite">
+                                     to="/favorite"> <img src={hartje} alt='favorite'/>
                                 <button type="button">Favorieten</button>
-                            </NavLink><img src={hartje} alt='favorite'/>
+                            </NavLink>}
 
+                            {isAuth && <button type="button" onClick={logout}>Logout</button>}
+
+                            {!isAuth &&
                             <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
                                      to="/signIn">
-                                <button type="button" onClick={ isAuth ? logout : login }>{isAuth ? "Logout" : "Login"}</button>
-                            </NavLink><img src={inloggen} alt='inloggen'/>
-                            
+                                <button type="button" >Sign in</button>
+                            </NavLink>} {!isAuth && <img src={inloggen} alt='inloggen'/>}
+
+                            {!isAuth &&
                             <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
                                      to="/signUp">
                                 <button type="button">Registeren</button>
-                            </NavLink>
+                            </NavLink> }
                         </div>
                     </nav>
                 </div>

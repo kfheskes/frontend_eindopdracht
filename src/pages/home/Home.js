@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import SearchBeer from "../../components/SearchBeer/SearchBeer";
 import axios from "axios";
 import SearchDish from "../../components/searchDish/SearchDish";
 import ResultBeer from "../../components/ResultBeer/ResultBeer";
 import ResultDish from "../../components/ResultDish/ResultDish";
+import {AuthContext} from "../../context/AuthContext";
+
 
 function Home() {
     const [descriptionBeer, setDescriptionBeer] = useState("");
@@ -12,6 +14,8 @@ function Home() {
     const [dishData, setDishData] = useState([]);
     const [error, setError] = useState(false);
     const [errorDish, setErrorDish] = useState(false);
+    // const {user: {email } } = useContext(AuthContext);
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -88,6 +92,7 @@ function Home() {
                 )}{errorDish && (
                 <span className="wrong-beer-error">Oh! Unknown dish try again</span>
             )}
+
                 <SearchBeer setBeerHandler={setDescriptionBeer}/>
                 <SearchDish setDishHandler={setDescriptionDish}/>
                 <span>

@@ -32,14 +32,17 @@ function AuthContextProvider({children}) {
     // Stap 2: Pas de verwijzingen naar de state aan (ook bij je logout functie) door in function login en logout een object creeren
     function login(jwt_token) {
         const decodedToken = jwt_decode(jwt_token)
+        localStorage.setItem('token', jwt_token)
         console.log(decodedToken)
         console.log(jwt_token)
+        // indien niet alle gebruikers info met login wordt verstuurd, kan je deze hier opgehaald worden
         setAuth({
             ...auth,
             isAuth: true,
             user: {
-                   email: 'jaja@hotmail.com',
-                    id: 1,
+                   email: decodedToken.email,
+                    id: decodedToken.sub,
+                    user: decodedToken.username
             }
         })
         console.log('De gebruiker is ingelogd 🔓')
@@ -47,6 +50,7 @@ function AuthContextProvider({children}) {
     }
 
     function logout() {
+        localStorage.removeItem('token');
         setAuth({
             ...auth,
             isAuth: false,

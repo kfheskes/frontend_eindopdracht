@@ -31,9 +31,9 @@ const {isAuth, login, logout} = useContext(AuthContext);
                         <div className="menu">
                             {isAuth &&
                             <NavLink className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
-                                     to="/favorite"> <img src={hartje} alt='favorite'/>
-                                <button type="button">Favorieten</button>
-                            </NavLink>}
+                                     to="/favorite">
+                                 <button type="button">Favorieten</button>
+                            </NavLink>} {isAuth && <img src={hartje} alt='favorite'/>}
 
                             {isAuth && <button type="button" onClick={logout}>Logout</button>}
 

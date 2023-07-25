@@ -8,8 +8,8 @@ export function checkTokenValidity (token){
     //     ...decodedToken,
     //      exp: ....
     // }
-    // vervolgens decodedToken vervangen door testExpirationTime
-    // ( kan ook exp.timestamp - 3540 = 1 minuut
+    // testExpirationTime voor .exp plaatsen. ipv decodedToken.
+    // kan ook exp.timestamp - 3540 = 1 minuut
     // setInterval(()=>{
     //     console.log( Math.round(Date.now() / 1000) )
     // }, 1000)

@@ -6,9 +6,12 @@ import Favorite from "./pages/favorite/Favorite";
 import Home from "./pages/home/Home";
 import SignIn from "./pages/signIn/SignIn";
 import SignUp from "./pages/signUp/SignUp";
+import SearchResult from "./pages/searchResult/SearchResult"
 import NotFound from "./pages/notFound/NotFound";
 import {GlobalState} from "./context/GlobalState";
 import {AuthContext} from "./context/AuthContext";
+
+
 
 function App() {
     const { isAuth} = useContext(AuthContext)
@@ -23,7 +26,7 @@ function App() {
                 <Route path="/signIn" element={<SignIn/>}/>
                 <Route path="/signUp" element={<SignUp/>}/>
                 <Route path="/favorite" element={isAuth ?<Favorite/> : <SignUp/>}/>
-                {/*<Route path="/searchResult/id" element={<SearchResult/>}/>*/}
+                <Route path="/searchResults/:id" element={<SearchResult/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
             </GlobalState>

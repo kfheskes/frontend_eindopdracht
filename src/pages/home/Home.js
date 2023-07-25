@@ -4,8 +4,6 @@ import axios from "axios";
 import SearchDish from "../../components/searchDish/SearchDish";
 import ResultBeer from "../../components/ResultBeer/ResultBeer";
 import ResultDish from "../../components/ResultDish/ResultDish";
-import {AuthContext} from "../../context/AuthContext";
-
 
 function Home() {
     const [descriptionBeer, setDescriptionBeer] = useState("");
@@ -14,8 +12,6 @@ function Home() {
     const [dishData, setDishData] = useState([]);
     const [error, setError] = useState(false);
     const [errorDish, setErrorDish] = useState(false);
-    // const {user: {email } } = useContext(AuthContext);
-
 
     useEffect(() => {
         const controller = new AbortController();
@@ -30,6 +26,7 @@ function Home() {
                 );
                 console.log(result.data);
                 setBeerData(result.data);
+
 
                 if (result.data.length === 0) {
                     setError(true);
@@ -87,13 +84,14 @@ function Home() {
     return (
         <main className="outer-container">
             <div className="inner-container">
+
                 {error && (
                     <span className="wrong-beer-error">Oh! Unknown beer try again</span>
                 )}{errorDish && (
                 <span className="wrong-beer-error">Oh! Unknown dish try again</span>
             )}
 
-                <SearchBeer setBeerHandler={setDescriptionBeer}/>
+                  <SearchBeer setBeerHandler={setDescriptionBeer}/>
                 <SearchDish setDishHandler={setDescriptionDish}/>
                 <span>
                     {beerData.length > 0 &&
@@ -110,7 +108,8 @@ function Home() {
                             <div key={beer.id}>
                                 <ResultDish beer={beer}/>
                             </div>
-                        ))}
+                        ))
+                    }
                 </span>
             </div>
         </main>

@@ -13,7 +13,7 @@ function SearchBeer({setBeerHandler}) {
 
     return (
         <form className="search-beer" onSubmit={onFormSubmit}>
-            <div className="search-bar">
+            <div className="search-beer-container">
                 <input
                     className="input-search-beer"
                     type="text"

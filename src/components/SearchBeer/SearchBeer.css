@@ -1,8 +1,15 @@
 
 .search-beer {
-    position: relative;
-    margin-top: 200px;
+    align-items: flex-start;
+    display: flex;
 }
+
+.search-beer-container {
+    height: 134px;
+    position: relative;
+    width: 228px;
+}
+
 .search-beer .input-search-beer{
     background-color: #ffffff;
     height: 52px;

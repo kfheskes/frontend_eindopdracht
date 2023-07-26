@@ -98,6 +98,7 @@ function Home() {
                 <SearchBeer setBeerHandler={setDescriptionBeer}/>
                 <SearchDish setDishHandler={setDescriptionDish}/>
 
+
                 <div className="beer_img_home">
                     <img className='trashyBlond' src={trashyBlond} alt='Trashy Blonde'/>
                     <img className='magicStoneDog' src={magicStoneDog} alt='Magic Stone Dog'/>

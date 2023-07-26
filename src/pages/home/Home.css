@@ -2,3 +2,25 @@
     color: black;
     font-size: 16px;
 }
+
+.beer_img_home {
+    display: flex;
+    justify-content: space-between; /* is bedoeld voor props hoofdrichting*/
+    margin: 8px 0;
+}
+
+.trashyBlond {
+    height: 393px;
+    width: 308px;
+}
+
+.magicStoneDog {
+    height: 379px;
+    width: 98px;
+}
+
+.electricIndia {
+    height: 399px;
+    width: 295px;
+}
+

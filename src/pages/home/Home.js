@@ -1,9 +1,13 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import SearchBeer from "../../components/SearchBeer/SearchBeer";
 import axios from "axios";
 import SearchDish from "../../components/searchDish/SearchDish";
 import ResultBeer from "../../components/ResultBeer/ResultBeer";
 import ResultDish from "../../components/ResultDish/ResultDish";
+import trashyBlond from '../../assets/Beer brewdog-trashy-blonde.jpg';
+import magicStoneDog from '../../assets/Beer Magic Stone Dog.jpg'
+import electricIndia from '../../assets/Beer-electric-india.png'
+import './Home.css'
 
 function Home() {
     const [descriptionBeer, setDescriptionBeer] = useState("");
@@ -91,8 +95,15 @@ function Home() {
                 <span className="wrong-beer-error">Oh! Unknown dish try again</span>
             )}
 
-                  <SearchBeer setBeerHandler={setDescriptionBeer}/>
+                <SearchBeer setBeerHandler={setDescriptionBeer}/>
                 <SearchDish setDishHandler={setDescriptionDish}/>
+
+                <div className="beer_img_home">
+                    <img className='trashyBlond' src={trashyBlond} alt='Trashy Blonde'/>
+                    <img className='magicStoneDog' src={magicStoneDog} alt='Magic Stone Dog'/>
+                    <img className='electricIndia' src={electricIndia} alt='Electric India'/>
+                </div>
+
                 <span>
                     {beerData.length > 0 &&
                         beerData.map((beer) => (

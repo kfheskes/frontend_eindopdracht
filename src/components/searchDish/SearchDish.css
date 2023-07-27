@@ -1,60 +1,39 @@
 
 .search-dish {
-    position: relative;
-    margin: 0 0 0 800px
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
 }
-.search-dish .input-search-dish{
+
+.search-dish-container {
+    height: 134px;
+    left: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 2);
+    border: black solid 3px;
+}
+
+.search-dish-container input {
     background-color: #ffffff;
     height: 52px;
-    top: 2px;
-    left: 37px;
-    position: relative;
     width: 170px;
-    border: none;
-}
-.search-dish .search-bar {
-    background-color: #ffffff;
-    border: 3px solid #000000;
+    border: 2px solid #000000;
     border-radius: 30px;
     box-shadow: 0 0 10px #0000004c;
-    height: 63px;
-    position: absolute;
-    width: 228px;
-}
-
-.search-dish .vector {
-    height: 25px;
-    left: 13px;
-    position: absolute;
-    top: 15px;
-    width: 25px;
-}
-
-.search-dish .overlap-group {
-    background-color: #eff405;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    height: 44px;
-    left: 37px;
-    position: absolute;
-    top: 90px;
-    width: 143px;
-}
-
-.search-dish .button-dish-search {
-    color: #000000;
-    background-color: #eff405;
-    font-size: 16px;
-    font-weight: 700;
-    height: 24px;
-    left: 18px;
-    letter-spacing: 1px;
-    line-height: 24px;
-    position: absolute;
     text-align: center;
-    top: 5px;
-    white-space: nowrap;
-    border: none;
+    margin-bottom: 20px;
+    background-image: url("../../assets/Vector.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
 }
 
 
+.search-dish-container button {
+    border-radius: 10px;
+    height: 40px;
+    width: 140px;
+}

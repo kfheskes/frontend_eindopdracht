@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import "./SearchBeer.css";
-import vector from "../../assets/Vector.svg";
-
 
 function SearchBeer({setBeerHandler}) {
     const [beerQuery, setBeerQuery] = useState('');
@@ -14,17 +12,15 @@ function SearchBeer({setBeerHandler}) {
     return (
         <form className="search-beer" onSubmit={onFormSubmit}>
             <div className="search-beer-container">
+                <div className="search-bar">
                 <input
-                    className="input-search-beer"
                     type="text"
                     name="search-beer"
                     value={beerQuery}
                     onChange={(e) => setBeerQuery(e.target.value)}
                 />
-                <img className="vector" alt="Vector" src={vector}/>
-            </div>
-            <div className="overlap-group">
-                <button type="submit" className="button-beer-search">
+                </div>
+                <button type="submit">
                     Search Beer
                 </button>
             </div>

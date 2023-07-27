@@ -5,22 +5,27 @@
 
 .beer_img_home {
     display: flex;
-    justify-content: space-between; /* is bedoeld voor props hoofdrichting*/
+    justify-content: space-between;
     margin: 8px 0;
+    height: 200px;
+    border: 4px solid red;
 }
 
 .trashyBlond {
     height: 393px;
-    width: 308px;
+    width: 340px;
+    border: 4px solid black;
 }
 
 .magicStoneDog {
     height: 379px;
     width: 98px;
+    border: 4px solid black;
 }
 
 .electricIndia {
     height: 399px;
-    width: 295px;
+    width: 275px;
+    border: 4px solid black;
 }
 

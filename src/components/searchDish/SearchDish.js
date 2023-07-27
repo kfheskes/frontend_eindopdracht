@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./SearchDish.css";
-import vector from "../../assets/Vector.svg";
+
 
 
 function SearchDish({setDishHandler}) {
@@ -13,17 +13,15 @@ function SearchDish({setDishHandler}) {
 
     return (
         <form className="search-dish" onSubmit={onFormSubmit}>
-            <div className="search-bar">
-                <input className="input-search-dish"
+            <div className="search-dish-container">
+                <input
                        type="text"
                        name="search-dish"
                        value={dishQuery}
                        onChange={(e) => setDishQuery(e.target.value)}
                 />
-                <img className="vector" alt="Vector" src={vector}/>
-            </div>
-            <div className="overlap-group">
-                <button type="submit" className="button-dish-search">
+
+                <button type="submit">
                     Search dish
                 </button>
             </div>

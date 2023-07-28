@@ -31,7 +31,7 @@ function Navbar() {
                                         to="/favorite"
                                         className="pages-website-button"
                                         >
-                                        Favorieten
+                                        Favourites
                                         <img src={hartje} alt='favorite'/>
                                     </NavLink>}
                                     </li>

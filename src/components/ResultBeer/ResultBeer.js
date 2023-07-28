@@ -11,8 +11,14 @@ function ResultBeer({beer}) {
 
     return (
         <div>
+            <div className="title-description-container">
+                <div className="title-beer">
             <h2>{beer.name}</h2>
+                </div>
+                <div className="description-beer">
             <p>{beer.description}</p>
+                </div>
+            </div>
             {beer.image_url ? (
                 <img src={beer.image_url} alt={beer.name}/>
             ) : (

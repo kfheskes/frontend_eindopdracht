@@ -1,22 +1,16 @@
-/* SearchBeer.css */
 
 .search-beer {
-    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    height: 134px;
-    left: 225px;
-    width: 50%;
+    justify-content: center;
+    margin-left: 275px;
+    padding-top: 30px;
 }
 
 .search-beer-container {
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    border: black solid 3px;
 }
 
 .search-beer-container input {

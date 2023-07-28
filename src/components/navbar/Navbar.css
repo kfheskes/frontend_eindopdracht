@@ -1,15 +1,30 @@
-.navbar {
+nav {
     display: flex;
-    padding-top: 20px;
-    justify-content: space-between;
-    align-items: center;
+    padding: 40px 80px;
+    justify-content: flex-end;
     background-color: white;
     color: black;
     flex-wrap: wrap;
     /*position: fixed;*/
 }
 
-.navbar .active-button-beer {
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 1200px;
+    border: 2px dashed blue;
+}
+
+li {
+    border: 2px dashed orange;
+    display: flex;
+    align-items: center;
+}
+
+
+
+li .active-button-beer {
     text-decoration: underline;
     display: flex;
     width: 115px;
@@ -25,7 +40,7 @@
     font-size: 16px;
 }
 
-.navbar .default-button-beer {
+li .default-button-beer {
     display: flex;
     width: 115px;
     height: 59px;
@@ -41,7 +56,7 @@
     font-size: 16px;
 }
 
-.navbar .default-button-beer button{
+li .default-button-beer button{
     background: #F0F405;
     font-size: 16px;
     font-weight: bold;
@@ -49,7 +64,7 @@
     cursor: pointer;
 }
 
-.navbar .active-button-beer button{
+li .active-button-beer button{
     background: #F0F405;
     font-size: 16px;
     font-weight: bold;
@@ -57,14 +72,8 @@
     cursor: pointer;
 }
 
-.navbar .menu {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
 
-
-.navbar .menu .active-button button {
+li .active-button button {
     text-decoration: underline;
     border: none;
     font-size: 16px;
@@ -75,7 +84,7 @@
     font-weight: bold;
 }
 
-.navbar .menu .default-button button {
+li .default-button button {
     text-decoration: none;
     border: none;
     font-size: 16px;

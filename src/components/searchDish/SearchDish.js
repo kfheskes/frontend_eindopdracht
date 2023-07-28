@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import "./SearchDish.css";
 
 
-
 function SearchDish({setDishHandler}) {
     const [dishQuery, setDishQuery] = useState('');
 
@@ -15,14 +14,14 @@ function SearchDish({setDishHandler}) {
         <form className="search-dish" onSubmit={onFormSubmit}>
             <div className="search-dish-container">
                 <input
-                       type="text"
-                       name="search-dish"
-                       value={dishQuery}
-                       onChange={(e) => setDishQuery(e.target.value)}
+                    type="text"
+                    name="search-dish"
+                    value={dishQuery}
+                    onChange={(e) => setDishQuery(e.target.value)}
                 />
 
                 <button type="submit">
-                    Search dish
+                    Search Dish
                 </button>
             </div>
         </form>

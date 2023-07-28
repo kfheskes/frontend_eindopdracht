@@ -3,29 +3,34 @@
     font-size: 16px;
 }
 
-.beer_img_home {
+.search-container {
     display: flex;
     justify-content: space-between;
-    margin: 8px 0;
-    height: 200px;
-    border: 4px solid red;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-.trashyBlond {
+.beer_img_home {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.trashy-blond {
     height: 393px;
     width: 340px;
-    border: 4px solid black;
 }
 
-.magicStoneDog {
+.magic-stone-dog {
     height: 379px;
     width: 98px;
-    border: 4px solid black;
 }
 
-.electricIndia {
+.electric-india {
     height: 399px;
     width: 275px;
-    border: 4px solid black;
 }
 

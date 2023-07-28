@@ -16,6 +16,8 @@ function Home() {
     const [dishData, setDishData] = useState([]);
     const [error, setError] = useState(false);
     const [errorDish, setErrorDish] = useState(false);
+    const [searchResult, setSearchResult] = useState(false)
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -30,8 +32,7 @@ function Home() {
                 );
                 console.log(result.data);
                 setBeerData(result.data);
-
-
+                setSearchResult(true);
                 if (result.data.length === 0) {
                     setError(true);
                 } else {
@@ -64,7 +65,7 @@ function Home() {
                 );
                 console.log(result.data);
                 setDishData(result.data);
-
+                setSearchResult(true);
                 if (result.data.length === 0) {
                     setErrorDish(true);
                 } else {
@@ -95,15 +96,17 @@ function Home() {
                 <span className="wrong-beer-error">Oh! Unknown dish try again</span>
             )}
 
-                <SearchBeer setBeerHandler={setDescriptionBeer}/>
-                <SearchDish setDishHandler={setDescriptionDish}/>
-
-
-                <div className="beer_img_home">
-                    <img className='trashyBlond' src={trashyBlond} alt='Trashy Blonde'/>
-                    <img className='magicStoneDog' src={magicStoneDog} alt='Magic Stone Dog'/>
-                    <img className='electricIndia' src={electricIndia} alt='Electric India'/>
+                <div className="search-container">
+                    <SearchBeer setBeerHandler={setDescriptionBeer}/>
+                    <SearchDish setDishHandler={setDescriptionDish}/>
                 </div>
+                {!searchResult &&
+                    <div className="beer_img_home">
+                        <img className='trashy-blond' src={trashyBlond} alt='Trashy Blonde'/>
+                        <img className='magic-stone-dog' src={magicStoneDog} alt='Magic Stone Dog'/>
+                        <img className='electric-india' src={electricIndia} alt='Electric India'/>
+                    </div>
+                }
 
                 <span>
                     {beerData.length > 0 &&

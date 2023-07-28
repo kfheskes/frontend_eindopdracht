@@ -1,19 +1,16 @@
 
 .search-dish {
-    align-items: flex-end;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-right: 275px;
+    padding-top: 30px;
 }
 
 .search-dish-container {
-    height: 134px;
-    left: 225px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: calc(100% / 2);
-    border: black solid 3px;
 }
 
 .search-dish-container input {

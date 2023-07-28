@@ -8,52 +8,61 @@ import {AuthContext} from "../../context/AuthContext";
 function Navbar() {
     const {isAuth, login, logout} = useContext(AuthContext);
 
-
-    const navObject = {
-        isActive: true,
-        isPending: false,
-    }
-
-
     return (
         <header>
             <div className="outer-container">
                 <div className="inner-container">
                     <nav>
                         <ul>
+                            <div className="biero-logo-nav">
                             <li>
                                 <NavLink
-                                    className={(navObject) => navObject.isActive ? 'active-button-beer' : 'default-button-beer'}
-                                    to="/">
-                                    <button type="button">Biero</button>
+                                    to="/"
+                                     className="biero-home-button"
+                                >
+                                    Biero
                                 </NavLink>
                             </li>
+                            </div>
 
-                            <li>
+                            <li className="pages-website">
                                 {isAuth &&
                                     <NavLink
-                                        className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
-                                        to="/favorite">
-                                        <button type="button">Favorieten</button>
-                                    </NavLink>} {isAuth && <img src={hartje} alt='favorite'/>}
+                                        to="/favorite"
+                                        className="pages-website-button"
+                                        >
+                                        Favorieten
+                                        <img src={hartje} alt='favorite'/>
+                                    </NavLink>}
                                     </li>
-                            <li>
-                                {isAuth && <button type="button" onClick={logout}>Logout</button>}
+
+                            <li className="pages-website">
+                                {isAuth &&
+                                    <NavLink
+                                        to="/"
+                                        className="pages-website-button-logout"
+                                        onClick={logout}
+                                    >
+                                        Logout
+                                    </NavLink>}
                             </li>
-                            <li>
+
+                            <li className="pages-website">
                                 {!isAuth &&
                                     <NavLink
-                                        className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
-                                        to="/signIn">
-                                        <button type="button">Sign in</button>
-                                    </NavLink>} {!isAuth && <img src={inloggen} alt='inloggen'/>}
+                                        to="/signIn"
+                                        className="pages-website-button"
+                                    >
+                                    Sign in <img src={inloggen} alt='inloggen'/>
+                                    </NavLink>}
                             </li>
-                            <li>
+                            <li className="pages-website">
                                 {!isAuth &&
                                     <NavLink
-                                        className={(navObject) => navObject.isActive ? 'active-button' : 'default-button'}
-                                        to="/signUp">
-                                        <button type="button">Registeren</button>
+                                        to="/signUp"
+                                        className="pages-website-button"
+                                    >
+                                        Sign up
                                     </NavLink>}
                             </li>
                         </ul>

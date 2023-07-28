@@ -1,31 +1,77 @@
 nav {
     display: flex;
-    padding: 40px 80px;
-    justify-content: flex-end;
     background-color: white;
     color: black;
     flex-wrap: wrap;
-    /*position: fixed;*/
+    position: fixed;
+    width: 1200px;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+.active {
+    text-decoration: underline;
+}
+
+nav button:hover {
+    color: #ccc;
+}
+
+nav button:hover {
+    color: #ccc;
 }
 
 ul {
     list-style: none;
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    flex-basis: 1200px;
-    border: 2px dashed blue;
 }
 
-li {
-    border: 2px dashed orange;
+.pages-website {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.pages-website-button {
+    border: none;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    margin-right: 16px;
+    width: 120px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
+.pages-website-button-logout {
+    border: none;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    margin-right: 16px;
+    width: 120px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
 
+.biero-logo-nav {
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    width: 100%;
+}
 
-li .active-button-beer {
-    text-decoration: underline;
+.biero-home-button {
     display: flex;
     width: 115px;
     height: 59px;
@@ -38,68 +84,8 @@ li .active-button-beer {
     cursor: pointer;
     margin-left: 16px;
     font-size: 16px;
-}
-
-li .default-button-beer {
-    display: flex;
-    width: 115px;
-    height: 59px;
-    padding: 5px 24px 5px 21px;
-    justify-content: center;
-    align-items: center;
-    background: #F0F405;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 16px;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-li .default-button-beer button{
-    background: #F0F405;
-    font-size: 16px;
-    font-weight: bold;
     border: none;
-    cursor: pointer;
-}
-
-li .active-button-beer button{
-    background: #F0F405;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
 }
 
 
-li .active-button button {
-    text-decoration: underline;
-    border: none;
-    font-size: 16px;
-    color: black;
-    background: white;
-    cursor: pointer;
-    margin-left: 16px;
-    font-weight: bold;
-}
-
-li .default-button button {
-    text-decoration: none;
-    border: none;
-    font-size: 16px;
-    color: black;
-    background: white;
-    cursor: pointer;
-    margin-left: 16px;
-    font-weight: bold;
-}
-
-.navbar button:hover {
-    color: #ccc;
-}
-
-.navbar .menu button:hover {
-    color: #ccc;
-}
 

@@ -11,3 +11,19 @@ body {
     font-family: 'Roboto', 'Poppins', 'Plus Jakarta Sans', sans-serif;
 
 }
+
+.outer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    flex-basis: 1200px;
+    border: solid red 4px;
+    margin-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 0;
+}

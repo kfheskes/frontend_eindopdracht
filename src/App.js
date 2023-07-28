@@ -9,6 +9,7 @@ import SignUp from "./pages/signUp/SignUp";
 import NotFound from "./pages/notFound/NotFound";
 import {GlobalState} from "./context/GlobalState";
 import {AuthContext} from "./context/AuthContext";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/favorite" element={isAuth ?<Favorite/> : <SignUp/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
+                <Footer/>
             </GlobalState>
         </>
     );

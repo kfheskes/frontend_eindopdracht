@@ -1,16 +1,38 @@
 .title-description-container {
-    border: brown solid 3px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title-beer,
+.description-beer,
+.beer-details-img,
+.food-pairing {
+    flex-basis: 45%;
+    line-height: 1.6;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .title-beer {
-    border: orange solid 3px;
+    text-decoration: underline;
 }
 
-.description-beer {
-    border: yellow solid 3px;
+.beer-details-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.no-img {
-    color: red;
+.food-pairing {
+    padding-top: 40px;
 }
 
+.food-pairing-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-pairing-list li {
+    padding-top: 25px;
+}

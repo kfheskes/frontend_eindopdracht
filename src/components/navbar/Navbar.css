@@ -16,11 +16,7 @@ nav a {
     text-decoration: underline;
 }
 
-nav button:hover {
-    color: #ccc;
-}
-
-nav button:hover {
+nav a:hover {
     color: #ccc;
 }
 

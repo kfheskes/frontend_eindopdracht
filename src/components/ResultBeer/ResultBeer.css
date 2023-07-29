@@ -1,3 +1,16 @@
+.title-description-container {
+    border: brown solid 3px;
+}
+
+.title-beer {
+    border: orange solid 3px;
+}
+
+.description-beer {
+    border: yellow solid 3px;
+}
+
 .no-img {
     color: red;
 }
+

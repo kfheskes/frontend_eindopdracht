@@ -13,7 +13,7 @@ function ResultBeer({beer}) {
         <div>
             <div className="title-description-container">
                 <div className="title-beer">
-            <h2>{beer.name}</h2>
+            <h3>{beer.name}</h3>
                     <button
                         disabled={favoriteDisabled}
                         onClick={() => addFavorites(beer)}> add to favourites
@@ -31,7 +31,7 @@ function ResultBeer({beer}) {
             ) : (
                 <div>
                 <img src={image} alt="img-default"/>
-                    <h2> No img available</h2>
+                    <h3> No img available</h3>
                 </div>)}
                 </div>
                 <div className="food-pairing">

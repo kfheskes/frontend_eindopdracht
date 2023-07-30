@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 import axios from "axios";
+import "./SignIn.css"
 
 function SignIn() {
     const {login} = useContext(AuthContext)
@@ -32,10 +33,12 @@ function SignIn() {
 
 
     return (
-        <div className="global-style-sign-in">
-            <h1>Sign in</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id
-                molestias qui quo unde?</p>
+        <div className="outer-container">
+            <div className="inner-container">
+                <div className="pages-padding">
+                    <div className="form-container">
+            <h2>Sign in</h2>
+            <p>Enter your username and email</p>
             {errorMessage && <div>{errorMessage}</div>}
             <form onSubmit={handleSubmit}>
                 <div>
@@ -51,6 +54,9 @@ function SignIn() {
             </form>
 
             <p>Do you have an account? use link to <Link to="/signUp">Sign up</Link></p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

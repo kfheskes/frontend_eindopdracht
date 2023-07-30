@@ -17,3 +17,11 @@ button {
     font-weight: bold;
     border-radius: 5px;
 }
+
+.pages-padding {
+    padding-top: 55px;
+}
+
+.pages-padding h2 {
+    text-align: center;
+}

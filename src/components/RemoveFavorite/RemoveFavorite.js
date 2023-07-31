@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {GlobalContext} from "../../context/GlobalState";
 import "./RemoveFavorite.css"
+import styles from '../../components/Button/Button.module.css'
 
 export const RemoveFavorite = ({beer, type}) => {
     const {removeBeerFromFavorites} = useContext(GlobalContext)
@@ -8,7 +9,11 @@ export const RemoveFavorite = ({beer, type}) => {
     return (
         <div>
             {type === "favorites" && (
-                <button onClick={() => removeBeerFromFavorites(beer.id)}> Remove from favorites</button>
+                <button
+                    className={styles['button']}
+                    onClick={() => removeBeerFromFavorites(beer.id)}
+                > Remove from favorites
+                </button>
             )}
         </div>
     )

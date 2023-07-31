@@ -22,3 +22,11 @@
     background: #F0F405;
     font-weight: bold;
 }
+
+/* rating button*/
+.food-pairing-buttons {
+    border: none;
+    background: none;
+    padding: 0 5px;
+    cursor: pointer;
+}

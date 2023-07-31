@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 
 function Navbar() {
-    const {isAuth, login, logout} = useContext(AuthContext);
+    const {isAuth, logout} = useContext(AuthContext);
 
     return (
         <header>
@@ -15,56 +15,61 @@ function Navbar() {
                     <nav>
                         <ul>
                             <div className="biero-logo-nav">
-                            <li>
-                                <NavLink
-                                    to="/"
-                                     className="biero-logo-nav-home"
-                                >
-                                    Biero
-                                </NavLink>
-                            </li>
-                            </div>
-
-                            <li className="pages-website">
-                                {isAuth &&
-                                    <NavLink
-                                        to="/favorite"
-                                        className="pages-website-button"
-                                        >
-                                        Favourites
-                                        <img src={hartje} alt='favorite'/>
-                                    </NavLink>}
-                                    </li>
-
-                            <li className="pages-website">
-                                {isAuth &&
+                                <li>
                                     <NavLink
                                         to="/"
-                                        className="pages-website-button-logout"
-                                        onClick={logout}
+                                        className="biero-logo-nav-home"
                                     >
-                                        Logout
-                                    </NavLink>}
-                            </li>
+                                        Biero
+                                    </NavLink>
+                                </li>
+                            </div>
 
-                            <li className="pages-website">
-                                {!isAuth &&
-                                    <NavLink
-                                        to="/signIn"
-                                        className="pages-website-button"
-                                    >
-                                    Sign in <img src={inloggen} alt='inloggen'/>
-                                    </NavLink>}
-                            </li>
-                            <li className="pages-website">
-                                {!isAuth &&
-                                    <NavLink
-                                        to="/signUp"
-                                        className="pages-website-button"
-                                    >
-                                        Sign up
-                                    </NavLink>}
-                            </li>
+                            {isAuth ? (
+                                <>
+                                    <li className="pages-website">
+
+                                        <NavLink
+                                            to="/favorite"
+                                            className="pages-website-button"
+                                        >
+                                            Favourites
+                                            <img src={hartje} alt='favorite'/>
+                                        </NavLink>
+                                    </li>
+
+                                    <li className="pages-website">
+
+                                        <NavLink
+                                            to="/"
+                                            className="pages-website-button-logout"
+                                            onClick={logout}
+                                        >
+                                            Logout
+                                        </NavLink>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li className="pages-website">
+
+                                        <NavLink
+                                            to="/signIn"
+                                            className="pages-website-button"
+                                        >
+                                            Sign in <img src={inloggen} alt='inloggen'/>
+                                        </NavLink>
+                                    </li>
+                                    <li className="pages-website">
+                                        <NavLink
+                                            to="/signUp"
+                                            className="pages-website-button"
+                                        >
+                                            Sign up
+                                        </NavLink>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </nav>
                 </div>

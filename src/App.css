@@ -17,3 +17,11 @@ h6 {
 .pages-padding h2 {
     text-align: center;
 }
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}

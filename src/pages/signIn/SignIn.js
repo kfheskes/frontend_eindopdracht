@@ -9,12 +9,23 @@ function SignIn() {
     const {login} = useContext(AuthContext)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+
+    const validatePassword = (value) => {
+        if (value.length < 6) {
+            return 'Password must be at least 6 characters long';
+        }
+        return '';
+    };
 
     async function handleSubmit(e) {
         e.preventDefault();
-        // Stap 3: Request naar de server met inlog-gegevens
-        // stap 3.1 maak een axios request
+
+        if (passwordError){
+            return;
+        }
+
         try {
             const res = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
                 username,
@@ -26,8 +37,7 @@ function SignIn() {
             login(res.data.accessToken , '/')
         } catch (e) {
             console.error("Login mislukt", e)
-            setErrorMessage('Oops, try again. Username or password is incorrect.')
-            // zorg voor een foutmelding als geprobeerd om in te loggen met een verkeerde email
+            setErrorMessage('Oeps, wrong username or password please try again');
         }
     }
 
@@ -39,7 +49,7 @@ function SignIn() {
                             <p>Biero</p>
                         </div>
                         <h2>Sign in</h2>
-                        {errorMessage && <div>{errorMessage}</div>}
+                        {errorMessage && <div className='error-message'>{errorMessage}</div>}
                         <form onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="username">Username:</label>
@@ -47,10 +57,15 @@ function SignIn() {
                             </div>
                             <div>
                                 <label htmlFor="password">Password:</label>
-                                <input id="password" type="password" placeholder="*********" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                                <input id="password" type="password" placeholder="*********" value={password} onChange={(e) =>setPassword(e.target.value)}
+                                       onBlur={(e) => setPasswordError(validatePassword(e.target.value))}
+                                />
+                                {passwordError && <div className='error-message'>{passwordError}</div>}
                             </div>
                             <div className="button-container-sign">
+
                             <button type="submit" className={styles['btn-sign']}>Sign in</button>
+
                             </div>
                             </form>
 

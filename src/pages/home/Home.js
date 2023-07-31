@@ -9,6 +9,7 @@ import magicStoneDog from '../../assets/Beer Magic Stone Dog.jpg'
 import electricIndia from '../../assets/Beer-electric-india.png'
 import './Home.css'
 
+
 function Home() {
     const [descriptionBeer, setDescriptionBeer] = useState("");
     const [descriptionDish, setDescriptionDish] = useState("");

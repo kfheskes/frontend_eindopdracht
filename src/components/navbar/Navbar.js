@@ -18,7 +18,7 @@ function Navbar() {
                             <li>
                                 <NavLink
                                     to="/"
-                                     className="biero-home-button"
+                                     className="biero-logo-nav-home"
                                 >
                                     Biero
                                 </NavLink>

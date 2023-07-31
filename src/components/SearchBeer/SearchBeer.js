@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./SearchBeer.css";
+import styles from '../../components/Button/Button.module.css'
 
 function SearchBeer({setBeerHandler}) {
     const [beerQuery, setBeerQuery] = useState('');
@@ -20,7 +21,7 @@ function SearchBeer({setBeerHandler}) {
                     onChange={(e) => setBeerQuery(e.target.value)}
                 />
                 </div>
-                <button type="submit">
+                <button type="submit" className={styles['btn-search']}>
                     Search Beer
                 </button>
             </div>

@@ -2,12 +2,13 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import styles from '../../components/Button/Button.module.css'
 
 function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [errorMessage, setErrorMessage] = useState ('')
 
     async function handleSubmit (e) {
         e.preventDefault();
@@ -23,16 +24,18 @@ function SignUp() {
             console.log(res)
         } catch (e) {
             console.error("Registratie mislukt", e)
+            setErrorMessage('please fill in the form correctly')
         }
 
     }
 
     return (
-        <>
-            <h1>Registreren</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque consectetur, dolore eaque eligendi
-                harum, numquam, placeat quisquam repellat rerum suscipit ullam vitae. A ab ad assumenda, consequuntur deserunt
-                doloremque ea eveniet facere fuga illum in numquam quia reiciendis rem sequi tenetur veniam?</p>
+        <div className="form-container">
+            <div className='biero-logo-container'>
+                <p>Biero</p>
+            </div>
+            <h2>Sign up</h2>
+            {errorMessage && <div>{errorMessage}</div>}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Emailadres:</label>
@@ -44,12 +47,14 @@ function SignUp() {
                 </div>
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" type="password" placeholder="Password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                    <input id="password" type="password" placeholder="************" value={password} onChange={(e) =>setPassword(e.target.value)}/>
                 </div>
-                <button type='submit'>Sign up</button>
+                <div className="button-container-sign">
+                <button type='submit' className={styles['btn-sign']}>Sign up</button>
+                </div>
             </form>
             <p>Do you have already an account <Link to="/signIn">klik here</Link> to sign in</p>
-        </>
+        </div>
     );
 }
 

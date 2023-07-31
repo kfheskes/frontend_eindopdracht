@@ -1,0 +1,24 @@
+.button {
+    border: solid 1px black;
+    background-color: #F0F405;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+/*Submit buttons*/
+
+.btn-sign {
+    background: #F0F405;
+    height: 51px;
+    width: 121px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-search {
+    background: #F0F405;
+    font-weight: bold;
+}

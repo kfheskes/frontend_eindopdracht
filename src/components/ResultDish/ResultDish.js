@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import './ResultDish.css';
 import {GlobalContext} from "../../context/GlobalState";
 import image from "../../assets/image.svg";
-
+import styles from '../../components/Button/Button.module.css'
 function ResultDish({beer}) {
     const {addFavorites, favorites} = useContext(GlobalContext);
 
@@ -17,7 +17,8 @@ function ResultDish({beer}) {
                     <h3>{beer.name}</h3>
                     <button
                         disabled={favoriteDisabled}
-                        onClick={() => addFavorites(beer)}> add to favourites
+                        onClick={() => addFavorites(beer)}
+                        className={styles['button']}> add to favourites
                     </button>
                 </div>
                 <div className="description-beer">

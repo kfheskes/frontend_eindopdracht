@@ -20,7 +20,6 @@ body {
 
 .inner-container {
     flex-basis: 1200px;
-    border: solid red 4px;
     margin-inline: 20px;
     display: flex;
     flex-direction: column;

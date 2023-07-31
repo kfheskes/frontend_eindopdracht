@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 import axios from "axios";
 import "./SignIn.css"
+import styles from '../../components/Button/Button.module.css'
 
 function SignIn() {
     const {login} = useContext(AuthContext)
@@ -33,31 +34,28 @@ function SignIn() {
 
 
     return (
-        <div className="outer-container">
-            <div className="inner-container">
-                <div className="pages-padding">
                     <div className="form-container">
-            <h2>Sign in</h2>
-            <p>Enter your username and email</p>
-            {errorMessage && <div>{errorMessage}</div>}
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input id="username" type="username" placeholder="Username" value={username} onChange={(e) =>setUsername(e.target.value)}/>
-                </div>
-                {/*voor eind opdracht componenten maken*/}
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input id="password" type="password" placeholder="*********" value={password} onChange={(e) =>setPassword(e.target.value)}/>
-                </div>
-                <button type="submit">Sign in</button>
-            </form>
+                        <div className='biero-logo-container'>
+                            <p>Biero</p>
+                        </div>
+                        <h2>Sign in</h2>
+                        {errorMessage && <div>{errorMessage}</div>}
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <label htmlFor="username">Username:</label>
+                                <input id="username" type="username" placeholder="Username" value={username} onChange={(e) =>setUsername(e.target.value)}/>
+                            </div>
+                            <div>
+                                <label htmlFor="password">Password:</label>
+                                <input id="password" type="password" placeholder="*********" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                            </div>
+                            <div className="button-container-sign">
+                            <button type="submit" className={styles['btn-sign']}>Sign in</button>
+                            </div>
+                            </form>
 
-            <p>Do you have an account? use link to <Link to="/signUp">Sign up</Link></p>
+                        <p>--------------New here? ------------- <Link to="/signUp"> Click here to sign up</Link></p>
                     </div>
-                </div>
-            </div>
-        </div>
     );
 }
 

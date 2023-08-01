@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import styles from '../../components/Button/Button.module.css';
+import styles from '../../components/Buttons/Button.module.css';
+import Button from "../../components/Buttons/Button";
 
 function SignUp() {
     const [email, setEmail] = useState('');
@@ -94,8 +95,8 @@ function SignUp() {
                     {passwordError && <div className='error-message'>{passwordError}</div>}
                 </div>
                 <div className="button-container-sign">
-                        <button type="submit" className={styles['btn-sign']}> Sign up
-                    </button>
+                        <Button type="submit" className={styles['btn-sign']}> Sign up
+                    </Button>
                 </div>
             </form>
             <p>

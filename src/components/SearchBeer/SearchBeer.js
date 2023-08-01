@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./SearchBeer.css";
-import styles from '../../components/Button/Button.module.css'
+import styles from '../Buttons/Button.module.css'
+import Button from "../Buttons/Button";
 
 function SearchBeer({setBeerHandler}) {
     const [beerQuery, setBeerQuery] = useState('');
@@ -21,9 +22,9 @@ function SearchBeer({setBeerHandler}) {
                     onChange={(e) => setBeerQuery(e.target.value)}
                 />
                 </div>
-                <button type="submit" className={styles['btn-search']}>
+                <Button type="submit" className={styles['btn-search']}>
                     Search Beer
-                </button>
+                </Button>
             </div>
         </form>
     );

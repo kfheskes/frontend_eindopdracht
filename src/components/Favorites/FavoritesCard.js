@@ -4,7 +4,8 @@ import {RemoveFavorite} from "../RemoveFavorite/RemoveFavorite";
 import Beer_empty from "../../assets/Beer empty.png";
 import Bier_full from "../../assets/Bier full.png";
 import {GlobalContext} from "../../context/GlobalState";
-import styles from '../../components/Button/Button.module.css'
+import styles from '../Buttons/Button.module.css'
+import Button from "../Buttons/Button"
 
 function FavoritesCard({beer, type}) {
     const {ratings, addRating,} = useContext(GlobalContext);
@@ -18,7 +19,6 @@ function FavoritesCard({beer, type}) {
 
         addRating(pairing, rating);
     };
-
 
     return (
         <>
@@ -53,7 +53,7 @@ function FavoritesCard({beer, type}) {
                                     Rate this combination:
                                 </p>
                                 {[0, 1, 2, 3, 4].map((ratingIconNumber) => (
-                                    <button
+                                    <Button
                                         className={styles['food-pairing-buttons']}
                                         key={ratingIconNumber}
                                         onClick={() => handleToggleImage(pairing, ratingIconNumber + 1)}
@@ -62,7 +62,7 @@ function FavoritesCard({beer, type}) {
                                             src={ratings[pairing] >= ratingIconNumber + 1 ? Bier_full : Beer_empty}
                                             alt="Beer"
                                         />
-                                    </button>
+                                    </Button>
                                 ))}
                             </li>
                         ))}

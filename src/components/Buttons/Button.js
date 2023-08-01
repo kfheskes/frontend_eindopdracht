@@ -2,7 +2,8 @@ import React from 'react';
 import './Button.module.css';
 
 
-function Button({className, text, type, onClick, disabled, children}) {
+function Button ({className, text, type, onClick, disabled, children}) {
+
     return (
         <button className={className}
                 id={text}
@@ -11,8 +12,6 @@ function Button({className, text, type, onClick, disabled, children}) {
                 disabled={disabled}
         >
             {children}
-
-
         </button>
     )
 }

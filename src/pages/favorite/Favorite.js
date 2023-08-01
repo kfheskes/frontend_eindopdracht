@@ -17,7 +17,7 @@ function Favorite() {
                     </div>
                 ))
             ) : (
-                <h3>No favourites</h3>
+                <h3 className="no-favourites">No favourites selected</h3>
             )}
                 </div>
             </div>

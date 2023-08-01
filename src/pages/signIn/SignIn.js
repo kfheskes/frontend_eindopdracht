@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 import axios from "axios";
 import "./SignIn.css"
-import styles from '../../components/Button/Button.module.css'
+import styles from '../../components/Buttons/Button.module.css'
+import Button from "../../components/Buttons/Button";
 
 function SignIn() {
     const {login} = useContext(AuthContext)
@@ -33,7 +34,6 @@ function SignIn() {
             });
             console.log(res)
             console.log(res.data)
-            // Stap 4: Geef de JWT mee aan de login functie
             login(res.data.accessToken , '/')
         } catch (e) {
             console.error("Login mislukt", e)
@@ -64,7 +64,7 @@ function SignIn() {
                             </div>
                             <div className="button-container-sign">
 
-                            <button type="submit" className={styles['btn-sign']}>Sign in</button>
+                            <Button type="submit" className={styles['btn-sign']}>Sign in</Button>
 
                             </div>
                             </form>

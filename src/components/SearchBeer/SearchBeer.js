@@ -8,7 +8,7 @@ function SearchBeer({setBeerHandler}) {
 
     function onFormSubmit(e) {
         e.preventDefault();
-        setBeerHandler(beerQuery);
+            setBeerHandler(beerQuery);
     }
 
     return (

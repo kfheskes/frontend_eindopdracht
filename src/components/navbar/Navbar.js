@@ -13,7 +13,7 @@ function Navbar() {
             <div className="outer-container">
                 <div className="inner-container">
                     <nav>
-                        <ul>
+                        <ul className='nav-container'>
                             <div className="biero-logo-nav">
                                 <li>
                                     <NavLink
@@ -26,8 +26,8 @@ function Navbar() {
                             </div>
 
                             {isAuth ? (
-                                <>
-                                    <li className="pages-website">
+                                <div className="pages-website">
+                                    <li >
 
                                         <NavLink
                                             to="/favorite"
@@ -48,10 +48,10 @@ function Navbar() {
                                             Logout
                                         </NavLink>
                                     </li>
-                                </>
+                                </div>
                             ) : (
-                                <>
-                                    <li className="pages-website">
+                                <div className="pages-website">
+                                    <li>
 
                                         <NavLink
                                             to="/signIn"
@@ -68,7 +68,7 @@ function Navbar() {
                                             Sign up
                                         </NavLink>
                                     </li>
-                                </>
+                                </div>
                             )}
                         </ul>
                     </nav>

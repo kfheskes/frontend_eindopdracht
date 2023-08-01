@@ -17,7 +17,7 @@ function Home() {
     const [dishData, setDishData] = useState([]);
     const [error, setError] = useState(false);
     const [errorDish, setErrorDish] = useState(false);
-    const [searchResult, setSearchResult] = useState(false)
+    const [searchResult, setSearchResult] = useState(false);
 
 
     useEffect(() => {
@@ -36,7 +36,9 @@ function Home() {
                 setSearchResult(true);
                 if (result.data.length === 0) {
                     setError(true);
+                    console.log(error)
                 } else {
+                    console.log(error)
                     setError(false);
                 }
             } catch (e) {
@@ -44,14 +46,13 @@ function Home() {
                 setError(true);
             }
         }
-
         if (descriptionBeer) {
             fetchDataBeer();
         }
         return function cleanup() {
             controller.abort();
         };
-    }, [descriptionBeer]);
+    }, [descriptionBeer,]);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -90,17 +91,17 @@ function Home() {
     return (
         <main className="outer-container">
             <div className="inner-container">
-
-                {error && (
-                    <span className="wrong-beer-error">Oh! Unknown beer try again</span>
-                )}{errorDish && (
-                <span className="wrong-beer-error">Oh! Unknown dish try again</span>
-            )}
-
                 <div className="search-container">
                     <SearchBeer setBeerHandler={setDescriptionBeer}/>
                     <SearchDish setDishHandler={setDescriptionDish}/>
                 </div>
+                {error && (
+                    <span className="wrong-beer-error">Oh! Unknown beer try again!</span>
+                )}
+                {errorDish && (
+                    <span className="wrong-beer-error">Oh! Unknown dish try again!</span>
+                )}
+
                 {!searchResult &&
                     <div className="beer_img_home">
                         <img className='trashy-blond' src={trashyBlond} alt='Trashy Blonde'/>
@@ -110,12 +111,13 @@ function Home() {
                 }
 
                 <span>
-                    {beerData.length > 0 &&
-                        beerData.map((beer) => (
-                            <div key={beer.id}>
-                                <ResultBeer beer={beer}/>
-                            </div>
-                        ))}
+                        {beerData.length > 0 &&
+                            beerData.map((beer) => (
+                                <div key={beer.id}>
+                                    <ResultBeer beer={beer}/>
+                                </div>
+                            ))}
+
                 </span>
 
                 <span>

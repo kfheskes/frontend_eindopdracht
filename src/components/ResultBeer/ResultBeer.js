@@ -21,6 +21,7 @@ function ResultBeer({beer}) {
                         disabled={favoriteDisabled}
                         onClick={() => addFavorites(beer)}> add to favourites
                     </Button>
+                    <p>To see your favourites you have to sign up and to navigate to favourites page</p>
                 </div>
                 <div className="description-beer">
                     <h3>Description beer</h3>

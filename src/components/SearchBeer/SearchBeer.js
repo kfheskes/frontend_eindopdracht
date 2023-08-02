@@ -25,6 +25,7 @@ function SearchBeer({setBeerHandler}) {
                 <Button type="submit" className={styles['btn-search']}>
                     Search Beer
                 </Button>
+
             </div>
         </form>
     );

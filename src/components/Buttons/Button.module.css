@@ -4,9 +4,12 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-
+.button:disabled {
+    cursor: not-allowed;
+}
 /*Submit buttons*/
 
 .btn-sign {
@@ -21,6 +24,7 @@
 .btn-search {
     background: #F0F405;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /* rating button*/

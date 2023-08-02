@@ -5,6 +5,7 @@ import axios from "axios";
 import "./SignIn.css"
 import styles from '../../components/Buttons/Button.module.css'
 import Button from "../../components/Buttons/Button";
+import Validation from "../../components/Validation/Validation";
 
 function SignIn() {
     const {login} = useContext(AuthContext)
@@ -12,18 +13,16 @@ function SignIn() {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [userNameError, setUsernameError] = useState('');
 
-    const validatePassword = (value) => {
-        if (value.length < 6) {
-            return 'Password must be at least 6 characters long';
-        }
-        return '';
-    };
 
     async function handleSubmit(e) {
         e.preventDefault();
 
-        if (passwordError){
+        setUsernameError(Validation.validateUsername(username));
+        setPasswordError(Validation.validatePassword(password));
+
+        if (passwordError || userNameError){
             return;
         }
 
@@ -53,12 +52,15 @@ function SignIn() {
                         <form onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="username">Username:</label>
-                                <input id="username" type="username" placeholder="Username" value={username} onChange={(e) =>setUsername(e.target.value)}/>
+                                <input id="username" type="username" placeholder="Username" value={username} onChange={(e) =>setUsername(e.target.value)}
+                                       onBlur={(e) => setUsernameError(Validation.validateUsername(e.target.value))}
+                                />
+                                {userNameError && <div className='error-message'>{userNameError}</div>}
                             </div>
                             <div>
                                 <label htmlFor="password">Password:</label>
                                 <input id="password" type="password" placeholder="*********" value={password} onChange={(e) =>setPassword(e.target.value)}
-                                       onBlur={(e) => setPasswordError(validatePassword(e.target.value))}
+                                       onBlur={(e) => setPasswordError(Validation.validatePassword(e.target.value))}
                                 />
                                 {passwordError && <div className='error-message'>{passwordError}</div>}
                             </div>

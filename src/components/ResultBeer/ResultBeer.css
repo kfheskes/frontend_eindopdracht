@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
 }
 
 .title-beer,
@@ -13,13 +14,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 .title-beer {
     text-decoration: underline;
 }
 
+.title-beer p {
+    font-size: 12px;
+}
 .beer-details-container {
     display: flex;
     justify-content: space-between;

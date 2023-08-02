@@ -14,7 +14,7 @@ export const RemoveFavorite = ({beer, type}) => {
                     className={styles['button']}
                     onClick={() => removeBeerFromFavorites(beer.id)}
                 >
-                    Remove from favorites
+                    Remove from favourites
                 </Button>
             )}
         </div>

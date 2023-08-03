@@ -102,13 +102,18 @@ function Home() {
                     <span className="wrong-beer-error">Oh! Unknown dish try again!</span>
                 )}
 
-                {!searchResult &&
-                    <div className="beer_img_home">
+                {!searchResult && (
+                <div className='search-description'>
+                    <p>Welcome, visitor of this website! Are you enjoying a beer or do you already know which beer you're going to drink, but still unsure about what food to pair it with? Then, use the <span className='search-bold-tekst'>"Search Beer"</span> function to find a suitable dish that perfectly complements your beer choice. On the other hand, if you already know what you want to eat and need help finding the perfect beer to go with it, use the <span className='search-bold-tekst'>"Search Dish"</span> feature. Enjoy exploring delightful beer and food combinations with our app!</p>
+                </div>
+                )}
+                {!searchResult && (
+                    <div className="beer-img-home">
                         <img className='trashy-blond' src={trashyBlond} alt='Trashy Blonde'/>
                         <img className='magic-stone-dog' src={magicStoneDog} alt='Magic Stone Dog'/>
                         <img className='electric-india' src={electricIndia} alt='Electric India'/>
                     </div>
-                }
+                    )}
 
                 <span>
                         {beerData.length > 0 &&

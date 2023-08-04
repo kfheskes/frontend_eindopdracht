@@ -4,14 +4,15 @@ import './NotFound.css'
 
 function NotFound() {
 
-    return(
+    return (
         <div className='outer-container'>
             <div className='inner-container'>
                 <div className="pages-padding">
-                <h3 className='page-not-found'>
-                    Oops..... This page does not exist go to <Link to="/" className='page-not-found-link'>HOME</Link>
-                </h3>
-            </div>
+                    <h3 className='page-not-found'>
+                        Oops..... This page does not exist go to <Link to="/"
+                                                                       className='page-not-found-link'>HOME</Link>
+                    </h3>
+                </div>
             </div>
         </div>
 

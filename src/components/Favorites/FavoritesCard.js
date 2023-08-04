@@ -1,22 +1,16 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import "./FavoritesCards.css";
 import {RemoveFavorite} from "../RemoveFavorite/RemoveFavorite";
-import Beer_empty from "../../assets/Beer empty.png";
-import Bier_full from "../../assets/Bier full.png";
+import Beer_empty from "../../assets/icons/Beer empty.png";
+import Bier_full from "../../assets/icons/Bier full.png";
 import {GlobalContext} from "../../context/GlobalState";
-import styles from '../Buttons/Button.module.css'
-import Button from "../Buttons/Button"
+import styles from "../Buttons/Button.module.css";
+import Button from "../Buttons/Button";
 
 function FavoritesCard({beer, type}) {
-    const {ratings, addRating,} = useContext(GlobalContext);
-    const [foodRatings, setFoodRatings] = useState({});
+    const {ratings, addRating} = useContext(GlobalContext);
 
     const handleToggleImage = (pairing, rating) => {
-        setFoodRatings((prevRatings) => ({
-            ...prevRatings,
-            [pairing]: rating,
-        }));
-
         addRating(pairing, rating);
     };
 
@@ -39,7 +33,8 @@ function FavoritesCard({beer, type}) {
                         <img src={beer.image_url} alt={beer.name}/>
                     ) : (
                         <div className="no-img">
-                            <h3>No img available</h3></div>
+                            <h3>No img available</h3>
+                        </div>
                     )}
                 </div>
 
@@ -49,17 +44,21 @@ function FavoritesCard({beer, type}) {
                         {beer.food_pairing.map((pairing) => (
                             <li key={pairing}>
                                 {pairing}
-                                <p>
-                                    Rate this combination:
-                                </p>
+                                <p>Rate this combination:</p>
                                 {[0, 1, 2, 3, 4].map((ratingIconNumber) => (
                                     <Button
-                                        className={styles['food-pairing-buttons']}
+                                        className={styles["food-pairing-buttons"]}
                                         key={ratingIconNumber}
-                                        onClick={() => handleToggleImage(pairing, ratingIconNumber + 1)}
+                                        onClick={() =>
+                                            handleToggleImage(pairing, ratingIconNumber + 1)
+                                        }
                                     >
                                         <img
-                                            src={ratings[pairing] >= ratingIconNumber + 1 ? Bier_full : Beer_empty}
+                                            src={
+                                                ratings[pairing] >= ratingIconNumber + 1
+                                                    ? Bier_full
+                                                    : Beer_empty
+                                            }
                                             alt="Beer"
                                         />
                                     </Button>
@@ -74,5 +73,3 @@ function FavoritesCard({beer, type}) {
 }
 
 export default FavoritesCard;
-
-

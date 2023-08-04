@@ -1,7 +1,7 @@
 import jwt_decode from "jwt-decode";
 
 
-export function checkTokenValidity (token){
+export function checkTokenValidity(token) {
     const decodedToken = jwt_decode(token);
 
     // const testExpirationTime = {

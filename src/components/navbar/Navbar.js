@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import './Navbar.css';
-import hartje from '../../assets/hartje.png'
-import inloggen from '../../assets/inloggen logo.png'
+import hartje from '../../assets/icons/hartje.png'
+import inloggen from '../../assets/icons/inloggen logo.png'
 import {NavLink} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 
@@ -27,7 +27,7 @@ function Navbar() {
 
                             {isAuth ? (
                                 <div className="pages-website">
-                                    <li >
+                                    <li>
 
                                         <NavLink
                                             to="/favorite"

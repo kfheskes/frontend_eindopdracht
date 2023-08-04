@@ -1,9 +1,10 @@
 import React, {useContext} from "react";
 import './ResultBeer.css';
 import {GlobalContext} from "../../context/GlobalState";
-import image from '../../assets/image.svg';
-import styles from '../Buttons/Button.module.css'
-import Button from '../Buttons/Button'
+import image from '../../assets/icons/image.svg';
+import styles from '../Buttons/Button.module.css';
+import Button from '../Buttons/Button';
+
 function ResultBeer({beer}) {
     const {addFavorites, favorites} = useContext(GlobalContext);
 

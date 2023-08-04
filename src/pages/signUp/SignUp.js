@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import styles from '../../components/Buttons/Button.module.css';
 import Button from "../../components/Buttons/Button";
@@ -23,7 +23,6 @@ function SignUp() {
         setUsernameError(Validation.validateUsername(username));
         setPasswordError(Validation.validatePassword(password));
 
-        // when error submit function stopt
         if (emailError || passwordError || userNameError) {
             return;
         }
@@ -35,7 +34,6 @@ function SignUp() {
                 username,
                 role: ['user'],
             });
-            console.log(res);
             setSuccessMessage('Registration Successful, please sign in');
             setErrorMessage('')
         } catch (e) {
@@ -61,8 +59,8 @@ function SignUp() {
                         type="email"
                         placeholder="Email"
                         value={email}
-                        onChange={(e) =>setEmail(e.target.value)}
-                        onBlur= {(e) => setEmailError(Validation.validateEmail(e.target.value))}
+                        onChange={(e) => setEmail(e.target.value)}
+                        onBlur={(e) => setEmailError(Validation.validateEmail(e.target.value))}
                     />
                     {emailError && <div className='error-message'>{emailError}</div>}
                 </div>
@@ -85,13 +83,13 @@ function SignUp() {
                         type="password"
                         placeholder="************"
                         value={password}
-                        onChange={(e) =>setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                         onBlur={(e) => setPasswordError(Validation.validatePassword(e.target.value))}
                     />
                     {passwordError && <div className='error-message'>{passwordError}</div>}
                 </div>
                 <div className="button-container-sign">
-                        <Button type="submit" className={styles['btn-sign']}> Sign up
+                    <Button type="submit" className={styles['btn-sign']}> Sign up
                     </Button>
                 </div>
             </form>

@@ -8,19 +8,19 @@ function SearchBeer({setBeerHandler}) {
 
     function onFormSubmit(e) {
         e.preventDefault();
-            setBeerHandler(beerQuery);
+        setBeerHandler(beerQuery);
     }
 
     return (
         <form className="search-beer" onSubmit={onFormSubmit}>
             <div className="search-beer-container">
                 <div className="search-bar">
-                <input
-                    type="text"
-                    name="search-beer"
-                    value={beerQuery}
-                    onChange={(e) => setBeerQuery(e.target.value)}
-                />
+                    <input
+                        type="text"
+                        name="search-beer"
+                        value={beerQuery}
+                        onChange={(e) => setBeerQuery(e.target.value)}
+                    />
                 </div>
                 <Button type="submit" className={styles['btn-search']}>
                     Search Beer

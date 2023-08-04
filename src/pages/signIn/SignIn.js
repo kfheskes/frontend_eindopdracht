@@ -15,14 +15,13 @@ function SignIn() {
     const [passwordError, setPasswordError] = useState('');
     const [userNameError, setUsernameError] = useState('');
 
-
     async function handleSubmit(e) {
         e.preventDefault();
 
         setUsernameError(Validation.validateUsername(username));
         setPasswordError(Validation.validatePassword(password));
 
-        if (passwordError || userNameError){
+        if (passwordError || userNameError) {
             return;
         }
 
@@ -31,48 +30,46 @@ function SignIn() {
                 username,
                 password,
             });
-            console.log(res)
-            console.log(res.data)
-            login(res.data.accessToken , '/')
+            login(res.data.accessToken, '/')
         } catch (e) {
             console.error("Login mislukt", e)
             setErrorMessage('Oeps, wrong username or password please try again');
         }
     }
 
-
-
     return (
-                    <div className="form-container">
-                        <div className='biero-logo-container'>
-                            <p>Biero</p>
-                        </div>
-                        <h2>Sign in</h2>
-                        {errorMessage && <div className='error-message'>{errorMessage}</div>}
-                        <form onSubmit={handleSubmit}>
-                            <div>
-                                <label htmlFor="username">Username:</label>
-                                <input id="username" type="username" placeholder="Username" value={username} onChange={(e) =>setUsername(e.target.value)}
-                                       onBlur={(e) => setUsernameError(Validation.validateUsername(e.target.value))}
-                                />
-                                {userNameError && <div className='error-message'>{userNameError}</div>}
-                            </div>
-                            <div>
-                                <label htmlFor="password">Password:</label>
-                                <input id="password" type="password" placeholder="*********" value={password} onChange={(e) =>setPassword(e.target.value)}
-                                       onBlur={(e) => setPasswordError(Validation.validatePassword(e.target.value))}
-                                />
-                                {passwordError && <div className='error-message'>{passwordError}</div>}
-                            </div>
-                            <div className="button-container-sign">
+        <div className="form-container">
+            <div className='biero-logo-container'>
+                <p>Biero</p>
+            </div>
+            <h2>Sign in</h2>
+            {errorMessage && <div className='error-message'>{errorMessage}</div>}
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="username">Username:</label>
+                    <input id="username" type="username" placeholder="Username" value={username}
+                           onChange={(e) => setUsername(e.target.value)}
+                           onBlur={(e) => setUsernameError(Validation.validateUsername(e.target.value))}
+                    />
+                    {userNameError && <div className='error-message'>{userNameError}</div>}
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input id="password" type="password" placeholder="*********" value={password}
+                           onChange={(e) => setPassword(e.target.value)}
+                           onBlur={(e) => setPasswordError(Validation.validatePassword(e.target.value))}
+                    />
+                    {passwordError && <div className='error-message'>{passwordError}</div>}
+                </div>
+                <div className="button-container-sign">
 
-                            <Button type="submit" className={styles['btn-sign']}>Sign in</Button>
+                    <Button type="submit" className={styles['btn-sign']}>Sign in</Button>
 
-                            </div>
-                            </form>
+                </div>
+            </form>
 
-                        <p>--------------New here? ------------- <Link to="/signUp"> Click here to sign up</Link></p>
-                    </div>
+            <p>--------------New here? ------------- <Link to="/signUp"> Click here to sign up</Link></p>
+        </div>
     );
 }
 

@@ -1,8 +1,8 @@
-
 nav a {
     text-decoration: none;
     color: black;
 }
+
 .active {
     text-decoration: underline;
 }
@@ -24,7 +24,6 @@ nav a:hover {
     justify-content: space-between;
 }
 
-
 .pages-website {
     display: flex;
     align-items: center;
@@ -35,7 +34,7 @@ nav a:hover {
     font-size: 16px;
     background: white;
     cursor: pointer;
-    margin-right: 16px;
+    margin-right: 65px;
     width: 120px;
     font-weight: bold;
     display: flex;

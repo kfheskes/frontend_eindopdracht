@@ -4,9 +4,9 @@ import axios from "axios";
 import SearchDish from "../../components/searchDish/SearchDish";
 import ResultBeer from "../../components/ResultBeer/ResultBeer";
 import ResultDish from "../../components/ResultDish/ResultDish";
-import trashyBlond from '../../assets/Beer brewdog-trashy-blonde.jpg';
-import magicStoneDog from '../../assets/Beer Magic Stone Dog.jpg'
-import electricIndia from '../../assets/Beer-electric-india.png'
+import trashyBlond from '../../assets/images/Beer brewdog-trashy-blonde.jpg';
+import magicStoneDog from '../../assets/images/Beer Magic Stone Dog.jpg'
+import electricIndia from '../../assets/images/Beer-electric-india.png'
 import './Home.css'
 
 
@@ -19,7 +19,6 @@ function Home() {
     const [errorDish, setErrorDish] = useState(false);
     const [searchResult, setSearchResult] = useState(false);
 
-
     useEffect(() => {
         const controller = new AbortController();
 
@@ -31,14 +30,11 @@ function Home() {
                 const result = await axios.get(
                     `https://api.punkapi.com/v2/beers?beer_name=${descriptionBeer}`
                 );
-                console.log(result.data);
                 setBeerData(result.data);
                 setSearchResult(true);
                 if (result.data.length === 0) {
                     setError(true);
-                    console.log(error)
                 } else {
-                    console.log(error)
                     setError(false);
                 }
             } catch (e) {
@@ -46,6 +42,7 @@ function Home() {
                 setError(true);
             }
         }
+
         if (descriptionBeer) {
             fetchDataBeer();
         }
@@ -65,7 +62,6 @@ function Home() {
                 const result = await axios.get(
                     `https://api.punkapi.com/v2/beers?food=${descriptionDish}`
                 );
-                console.log(result.data);
                 setDishData(result.data);
                 setSearchResult(true);
                 if (result.data.length === 0) {
@@ -103,9 +99,15 @@ function Home() {
                 )}
 
                 {!searchResult && (
-                <div className='search-description'>
-                    <p>Welcome, visitor of this website! Are you enjoying a beer or do you already know which beer you're going to drink, but still unsure about what food to pair it with? Then, use the <span className='search-bold-tekst'>"Search Beer"</span> function to find a suitable dish that perfectly complements your beer choice. On the other hand, if you already know what you want to eat and need help finding the perfect beer to go with it, use the <span className='search-bold-tekst'>"Search Dish"</span> feature. Enjoy exploring delightful beer and food combinations with our app!</p>
-                </div>
+                    <div className='search-description'>
+                        <p>Welcome, visitor of this website! Are you enjoying a beer or do you already know which beer
+                            you're going to drink, but still unsure about what food to pair it with? Then, use the <span
+                                className='search-bold-tekst'>"Search Beer"</span> function to find a suitable dish that
+                            perfectly complements your beer choice. On the other hand, if you already know what you want
+                            to eat and need help finding the perfect beer to go with it, use the <span
+                                className='search-bold-tekst'>"Search Dish"</span> feature. Enjoy exploring delightful
+                            beer and food combinations with our app!</p>
+                    </div>
                 )}
                 {!searchResult && (
                     <div className="beer-img-home">
@@ -113,7 +115,7 @@ function Home() {
                         <img className='magic-stone-dog' src={magicStoneDog} alt='Magic Stone Dog'/>
                         <img className='electric-india' src={electricIndia} alt='Electric India'/>
                     </div>
-                    )}
+                )}
 
                 <span>
                         {beerData.length > 0 &&

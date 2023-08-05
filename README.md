@@ -1,8 +1,35 @@
-# Getting Started with Create React App
+# instalatiehandleiding Biero
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screenshot.png](..%2F..%2FOneDrive%2FDocuments%2FIT%2FFull%20stack%20developer%2Feindopdracht%2Ffotos%20en%20afbeeldingen%2Fscreenshot.png)
 
-## Available Scripts
+# Ontdek de perfecte bier- en gerechtcombinaties met Biero
+Welkom bij mijn apllicatie Biero, waarbij passie voor eten en bier samenkomen in een unieke app. Biero is ontworpen om jou te helpen bij het vinden van het perfecte bier dat naadloos aansluit bij jouw favoriete gerechten. De app is gemaakt in het Engels dit komt omdat de data is opgeslagen in het Engels.
+
+
+## Inhoudsopgave
+
+## Benodigdheden
+
+- **Browser** 
+  - Een browser, ik heb zelf gebruik gemaakt van de browser Brave. Brave zorgt ervoor dat advertentie worden geblokt. 
+  - link om brave te downloaden: https://brave.com/download/ 
+
+- **NODE JS**
+  - Node.js is nodig om commando's in de terminal te kunnen uitvoeren.
+  - link om Node JS te downloaden: https://nodejs.org/en/download 
+
+- **Integrated development environment (IDE)**
+  - Om de applicatie te kunnen is een IDE benodigd.
+  - Webstorm is een fijn IDE om te gebruiken. https://www.jetbrains.com/webstorm/
+
+- **GIT** 
+  - GIT is nodig om de applicatie te kunnen clonen. https://git-scm.com/downloads
+
+## Stappenplan
+
+1. Installeer een browser naar keuze. 
+
+2. 
 
 In the project directory, you can run:
 

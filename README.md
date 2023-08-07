@@ -56,10 +56,15 @@ Welkom bij mijn apllicatie Biero, waarbij passie voor eten en bier samenkomen in
     - open taakbeheerder kies voor windows verkenner rechter muisknop en opnieuw opstarten. vervolgens start WebStorm op. 
     - open de terminal en voer het commando git help. Vervolgens kan je controleren of het goed is geinstaleerd. zodra de terminal usage: git terug geeft met meer informatie weet je dat git goed is geinstaleerd. mocht dit niet het geval zijn probeer het opnieuw te installeren. Mocht dat niet lukken start de computer opnieuw op.
     - Apple: 
-    - Het kan zijn dat git al is geïnstalleerd op je computer. controleer dit in WebStorm door in de terminal git --version in te vullen en op enter te drukken. Zie je een versie nummer dan is het geinstaleerd. bijvoorbeeld v2.39.2 (apple-git) is dit het geval ga verder naar 4b.a
-    - 
-    - 
-4b.a
+    - Het kan zijn dat git al is geïnstalleerd op je computer. Controleer dit in WebStorm door in de terminal git --version in te vullen en op enter te drukken. Zie je een versie nummer dan is het geïnstalleerd. bijvoorbeeld v2.39.2 (apple-git) is dit het geval ga verder naar 4c
+    - In het geval van melding commandline: open de appstore. Zoek naar xcode download en installeer en herstart je terminal opnieuw op. controleer dit door in de terminal git --version in te toetsen en op enter te drukken krijg je een versie te zien dan is git geïnstalleerd. 
+    - In het geval van een melding met rode tekst installeer git https://git-scm.com/downloads kies voor macOS en vervolgens voor Binary installer. Download het bestand. Na het downloaden druk je op git intel universal en installeer. Na de installatie moet de computer opnieuw worden opgestart. 
+    - open WebStorm en voer het commando git --version uit. Als git goed is installer wordt bijvoorbeeld git version 2.15.0 weergegeven. 
+    - Wanneer terminal geen git version terug geeft. Moet je nog een stap doen. Voer het volgende commando in de terminal: echo "PATH=/usr/local/git/bin:\$PATH" >> ~/.bash_profile en druk op enter.
+    - vervolgens moet je volgende commando invullen in de terminal source ~/.bash_profile en druk op enter. 
+    - controleer of het juist is geïnstalleerd door git --version in de terminal in te toetsen en druk vervolgens op enter. Als goed is krijg je bijvoorbeeld git version 2.15.0 te zien in de terminal. Dat betekent dat het gelukt is. 
+
+4c.
     - Ga naar https://github.com/kfheskes/frontend_eindopdracht 
     - klik op groene button code en kies voor HTTPS en kopieer de link. 
     - Open WebStorm boven in de menu balk klik op Git en vervolgens op clone. Plak de link in URL input veld en druk op clone. 

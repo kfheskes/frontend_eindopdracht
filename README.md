@@ -1,6 +1,6 @@
 # instalatiehandleiding Biero
 
-![screenshot.png](..%2F..%2FOneDrive%2FDocuments%2FIT%2FFull%20stack%20developer%2Feindopdracht%2Ffotos%20en%20afbeeldingen%2Fscreenshot.png)
+![screenshot.png](src%2Fassets%2Fimages%2Fscreenshot.png)
 
 # Ontdek de perfecte bier- en gerechtcombinaties met Biero
 Welkom bij mijn apllicatie Biero, waarbij passie voor eten en bier samenkomen in een unieke app. Biero is ontworpen om jou te helpen bij het vinden van het perfecte bier dat naadloos aansluit bij jouw favoriete gerechten. De app is gemaakt in het Engels dit komt omdat de data is opgeslagen in het Engels. Voor mededevelopers is de applicatie te clonen via gitHub, mocht je geen enkele ervaring hebben binnen het frontend-landschap volg dan de onderstaande stappen. 

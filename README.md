@@ -3,7 +3,7 @@
 ![screenshot.png](src%2Fassets%2Fimages%2Fscreenshot.png)
 
 # Ontdek de perfecte bier en gerechtcombinaties met Biero
-Welkom bij mijn apllicatie Biero, waarbij passie voor eten en bier samenkomen in een unieke app. Biero is ontworpen om jou te helpen bij het vinden van het perfecte bier dat naadloos aansluit bij jouw favoriete gerechten. De app is gemaakt in het Engels dit komt omdat de data is opgeslagen in het Engels. Voor mededevelopers is de applicatie te clonen via gitHub, mocht je geen enkele ervaring hebben binnen het frontend-landschap volg dan het stappenplan installatie. 
+Welkom bij mijn apllicatie Biero, waarbij passie voor eten en bier samenkomen in een unieke app. Biero is ontworpen om jou te helpen bij het vinden van het perfecte bier dat naadloos aansluit bij jouw favoriete gerecht. De app is gemaakt in het Engels. Dit komt omdat de data is opgeslagen in het Engels. Voor mededevelopers is de applicatie te clonen via gitHub, mocht je geen enkele ervaring hebben binnen het frontend-landschap volg dan het stappenplan voor installatie. 
 
 ## Inhoudsopgave
 - Overzicht van de applicatiefuncties;
@@ -25,11 +25,11 @@ Op de start pagina zijn er twee verschillende zoek functies.
 2. Zoek naar gerecht 'Search Dish': Hiermee kun je gerechten opzoeken en krijg je suggesties te zien voor bijpassende bieren.   
 
 Indien gewenst kun je de opgeslagen combinaties van bier en gerecht bewaren. Om toegang te krijgen tot deze functie is registratie en inloggen verreist. 
-**Let op** er wordt gebruik gemaakt van punk API, waarop de zoekfuncties zijn gebaseerd, in het Engles zijn en mogelijk niet alle biersoorten bevat. Veel voorkomende bieren zijn van brouwerij Brew Dog. 
+**Let op** er wordt gebruik gemaakt van punk API, waarop de zoekfuncties zijn gebaseerd, API is in het Engles en bevat niet alle biersoorten. Veel voorkomende bieren zijn van brouwerij Brew Dog. 
 
 **Registratie pagina (sign up):**
 
-Op de registratiepagina kun je een nieuw account aanmaken. Deze registratie maakt gebruik van de NOVI backend. Het kan enige tijd duren voor de eerste aanvraag om de server uit de 'slaapstand' te halen, maar de responstijd zal daarna normaal zijn. Na een succesvolle registratie ontvang je een melding en kun je vervolgens inloggen op de 'Sign In' pagina. **Let op** de gebruikersdatabase regelmatig wordt geleegd, wat betekent dat registratie binnen een uur opnieuw vereist kan zijn. 
+Op de registratiepagina kun je een nieuw account aanmaken. Deze registratie maakt gebruik van de NOVI backend. Het kan enige tijd duren voor de eerste aanvraag om de server uit de 'slaapstand' te halen, maar de responstijd zal daarna normaal zijn. Na een succesvolle registratie ontvang je een melding en kun je vervolgens inloggen op de 'Sign In' pagina. **Let op** de gebruikersdatabase wordt regelmatig geleegd, wat betekent dat registratie binnen een uur opnieuw vereist kan zijn. 
 
 **Inlog pagina (Sign in):**
 
@@ -37,7 +37,7 @@ Na registratie kun je inloggen met je gebruikersnaam en wachtwoord. Na een succe
 
 **Favorieten pagina (favourites):**
 
-Op de 'Favorieten' pagina kun je je opgeslagen favoriete combinaties van bier en gerecht bekijken, die zijn opgeslagen in de localStorage van je browser. Daarnaast heb je de mogelijkheid om combinaties te verwijderen. Deze functionaliteit biedt jouw gemak en flexibiliteit bij het beheren van jouw persoonlijke lijst van voorkeuren.
+Op de 'Favorieten' pagina kun je jouw opgeslagen favoriete combinaties van bier en gerecht bekijken, die zijn opgeslagen in de localStorage van je browser. Daarnaast heb je de mogelijkheid om combinaties te verwijderen. Deze functionaliteit biedt jouw gemak en flexibiliteit bij het beheren van jouw persoonlijke lijst van voorkeuren.
 
 Door deze functies en pagina's te combineren, biedt de applicatie jou de mogelijkheid om te zoeken naar smakelijke bieren en gerechten, jouw favorieten op te slaan en een gepersonaliseerde ervaring te creëren die past bij jouw smaak en voorkeuren.
 

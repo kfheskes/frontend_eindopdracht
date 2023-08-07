@@ -64,7 +64,6 @@ function AuthContextProvider({children}) {
         navigate('/')
     }
 
-
     const data = {
         isAuth: auth.isAuth,
         user: auth.user,

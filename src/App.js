@@ -11,10 +11,8 @@ import {GlobalState} from "./context/GlobalState";
 import {AuthContext} from "./context/AuthContext";
 import Footer from "./components/Footer/Footer";
 
-
 function App() {
     const {isAuth} = useContext(AuthContext)
-    console.log(isAuth)
 
     return (
         <>

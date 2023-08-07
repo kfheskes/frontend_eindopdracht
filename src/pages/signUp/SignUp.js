@@ -15,7 +15,6 @@ function SignUp() {
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
 
-
     async function handleSubmit(e) {
         e.preventDefault();
 

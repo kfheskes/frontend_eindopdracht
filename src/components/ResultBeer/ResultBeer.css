@@ -23,6 +23,7 @@
 .title-beer p {
     font-size: 12px;
 }
+
 .beer-details-container {
     display: flex;
     justify-content: space-between;

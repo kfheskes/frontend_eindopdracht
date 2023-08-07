@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./SearchDish.css";
-import styles from "../Button/Button.module.css";
+import styles from "../Buttons/Button.module.css";
+import Button from "../Buttons/Button";
 
 
 function SearchDish({setDishHandler}) {
@@ -21,9 +22,9 @@ function SearchDish({setDishHandler}) {
                     onChange={(e) => setDishQuery(e.target.value)}
                 />
 
-                <button type="submit" className={styles['btn-search']}>
+                <Button type="submit" className={styles['btn-search']}>
                     Search Dish
-                </button>
+                </Button>
             </div>
         </form>
     );

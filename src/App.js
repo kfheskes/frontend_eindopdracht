@@ -12,22 +12,21 @@ import {AuthContext} from "./context/AuthContext";
 import Footer from "./components/Footer/Footer";
 
 
-
 function App() {
-    const { isAuth} = useContext(AuthContext)
+    const {isAuth} = useContext(AuthContext)
     console.log(isAuth)
 
     return (
         <>
             <GlobalState>
-            <Navbar/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/signIn" element={<SignIn/>}/>
-                <Route path="/signUp" element={<SignUp/>}/>
-                <Route path="/favorite" element={isAuth ?<Favorite/> : <SignUp/>}/>
-                <Route path="*" element={<NotFound/>}/>
-            </Routes>
+                <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/signIn" element={<SignIn/>}/>
+                    <Route path="/signUp" element={<SignUp/>}/>
+                    <Route path="/favorite" element={isAuth ? <Favorite/> : <SignUp/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
                 <Footer/>
             </GlobalState>
         </>

@@ -1,6 +1,9 @@
-.wrong-beer-error{
+.wrong-beer-error {
     color: black;
     font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
 }
 
 .search-container {
@@ -12,7 +15,17 @@
     padding-top: 80px;
 }
 
-.beer_img_home {
+.search-description {
+    display: flex;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.search-bold-tekst {
+    font-weight: bold;
+}
+
+.beer-img-home {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,4 +47,3 @@
     height: 399px;
     width: 275px;
 }
-

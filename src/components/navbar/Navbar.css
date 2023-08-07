@@ -1,17 +1,8 @@
-nav {
-    display: flex;
-    background-color: white;
-    color: black;
-    flex-wrap: wrap;
-    position: fixed;
-    width: 1200px;
-    justify-content: flex-end;
-}
-
 nav a {
     text-decoration: none;
     color: black;
 }
+
 .active {
     text-decoration: underline;
 }
@@ -20,17 +11,22 @@ nav a:hover {
     color: #ccc;
 }
 
-ul {
+.nav-container {
     list-style: none;
     display: flex;
+    background-color: white;
+    color: black;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
     width: 100%;
+    max-width: 1200px;
     justify-content: space-between;
 }
 
 .pages-website {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
 }
 
 .pages-website-button {
@@ -38,7 +34,7 @@ ul {
     font-size: 16px;
     background: white;
     cursor: pointer;
-    margin-right: 16px;
+    margin-right: 65px;
     width: 120px;
     font-weight: bold;
     display: flex;
@@ -61,10 +57,8 @@ ul {
 }
 
 .biero-logo-nav {
-    display: flex;
     align-items: center;
-    justify-items: flex-start;
-    width: 100%;
+    justify-content: flex-end;
 }
 
 .biero-logo-nav-home {
@@ -83,5 +77,22 @@ ul {
     border: none;
 }
 
+@media screen and (max-width: 768px) {
+    nav {
+        position: static;
+        left: 0;
+    }
 
+    .biero-logo-nav {
+        justify-content: flex-start;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .pages-website {
+        margin-top: 8px;
+    }
+}
 
